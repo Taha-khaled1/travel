@@ -323,7 +323,7 @@
         <div class="rlr-masonary-grid__container" dir="rtl">
             <div class="rlr-masonary-grid__one">
                 <!-- Destination card -->
-                <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+                <a class="rlr-destination-card" href="{{ route('alltrip') }}">
                     <img data-sizes="auto" data-src="{{ URL::asset('assets/catogery/1.png') }}"
                         data-srcset="./assets/images/dest/01@2x.jpg 2x" class="rlr-destination-card__img lazyload"
                         alt="...">
@@ -340,7 +340,7 @@
             </div>
             <div class="rlr-masonary-grid__two">
                 <!-- Destination card -->
-                <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+                <a class="rlr-destination-card" href="{{ route('alltrip') }}">
                     <img data-sizes="auto" data-src="{{ URL::asset('assets/catogery/2.png') }}"
                         data-srcset="./assets/images/dest/02@2x.jpg 2x" class="rlr-destination-card__img lazyload"
                         alt="...">
@@ -357,7 +357,7 @@
             </div>
             <div class="rlr-masonary-grid__three">
                 <!-- Destination card -->
-                <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+                <a class="rlr-destination-card" href="{{ route('alltrip') }}">
                     <img data-sizes="auto" data-src="{{ URL::asset('assets/catogery/3.png') }}"
                         data-srcset="./assets/images/dest/03@2x.jpg 2x" class="rlr-destination-card__img lazyload"
                         alt="...">
@@ -374,7 +374,7 @@
             </div>
             <div class="rlr-masonary-grid__four">
                 <!-- Destination card -->
-                <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+                <a class="rlr-destination-card" href="{{ route('alltrip') }}">
                     <img data-sizes="auto" data-src="{{ URL::asset('assets/catogery/4.png') }}"
                         data-srcset="./assets/images/dest/04@2x.jpg 2x" class="rlr-destination-card__img lazyload"
                         alt="...">
@@ -391,7 +391,7 @@
             </div>
             <div class="rlr-masonary-grid__five">
                 <!-- Destination card -->
-                <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+                <a class="rlr-destination-card" href="{{ route('alltrip') }}">
                     <img data-sizes="auto" data-src="{{ URL::asset('assets/catogery/5.png') }}"
                         data-srcset="./assets/images/dest/05@2x.jpg 2x" class="rlr-destination-card__img lazyload"
                         alt="...">
@@ -408,7 +408,7 @@
             </div>
             <div class="rlr-masonary-grid__six">
                 <!-- Destination card -->
-                <a class="rlr-destination-card" href="./search-results--left-sidebar.html">
+                <a class="rlr-destination-card" href="{{ route('alltrip') }}">
                     <img data-sizes="auto" data-src="{{ URL::asset('assets/catogery/4.png') }}"
                         data-srcset="./assets/images/dest/06@2x.jpg 2x" class="rlr-destination-card__img lazyload"
                         alt="...">

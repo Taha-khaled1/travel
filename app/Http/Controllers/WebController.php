@@ -22,7 +22,13 @@ class WebController extends Controller
           return view('trip.home',['tripAdvun'=>$tripAdvun,'event'=>$event,'tripship'=>$tripship,'tripcar'=>$tripcar]);
       
     }
+    public function checkout()
+    {
 
+          $event   =   Event::all();
+          return view('trip.check_out',['event'=>$event]);
+      
+    }
     /**
      * Show the form for creating a new resource.
      */

@@ -3,7 +3,7 @@
         <div class="rlr-footer__getintouch">
             <div class="rlr-footer__getintouch_col rlr-footer__getintouch__col--address p-0 text-end">
                 <h4>مكاتبنا</h4>
-                <a href="#">نيبال والولايات المتحدة والهند</a>
+                <a href="#">الامارات العربيه المتحده</a>
             </div>
             <div class="rlr-footer__getintouch_col rlr-footer__getintouch__col--title text-end">
                 <h4>احصل على السفر</h4>

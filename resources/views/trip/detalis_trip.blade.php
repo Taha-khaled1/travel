@@ -386,7 +386,7 @@
                 </div>
               </div>
             </fieldset>
-            <a href="./checkout-page.html" class="btn rlr-button rlr-booking-card__button"> اكمال عملية الحجز</a>
+            <a href="{{route('check_out')}}" class="btn rlr-button rlr-booking-card__button"> اكمال عملية الحجز</a>
           </form>
         </aside>
       </section>

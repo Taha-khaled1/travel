@@ -38,6 +38,7 @@ Route::controller(WebController::class)->group(function () {
     Route::get('/contactUs', 'create')->name('contactUs');
     Route::get('/about', 'show')->name('about');
     Route::get('/alltrip', 'edit')->name('alltrip');
+    Route::get('/check_out', 'checkout')->name('check_out');
     Route::get('/alltripType{id}', 'moreType')->name('alltrip.Type');
     Route::get('/detalisTrip{id}', 'detalisTrip')->name('detalis.Trip');
     // Route::post('/register', 'register');
