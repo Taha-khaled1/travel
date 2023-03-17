@@ -18,7 +18,11 @@
           <!-- Currency dropdown -->
           <!-- User account dropdown -->
           <li class="navigation-item">
-            <a class="navigation-link" href="#"><img class="ui right spaced avatar image me-2" src="{{URL::asset('./assets/images/blog-single-avatar.png')}}" alt="account avatar" /> Sarah J </a>
+            <a class="navigation-link" href="#">
+              <img class="ui right spacedd avatar image me-2" src="{{URL::asset('logoam.png')}}"  width="100" height="100" />
+              الحساب
+            </a>
+            
             <ul class="navigation-dropdown">
               <li class="navigation-dropdown-item">
                 <a class="navigation-dropdown-link" href="{{route('profile.edit')}}">الملف الشخصي</a>
@@ -32,9 +36,17 @@
               <li class="navigation-dropdown-item">
                 <hr class="dropdown-divider rlr-dropdown__divider" />
               </li>
+              @auth
               <li class="navigation-dropdown-item">
                 <a class="navigation-dropdown-link" href="./account-pages--login.html">تسجيل الخروج</a>
-              </li>
+              </li>  
+              @endauth
+              @guest
+              <li class="navigation-dropdown-item">
+                <a class="navigation-dropdown-link" href="./account-pages--login.html">تسجيل الدخول</a>
+              </li> 
+              @endguest
+
             </ul>
           </li>
 
