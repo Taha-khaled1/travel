@@ -4,6 +4,9 @@
 
 @section('css')
 
+<link href="{{URL::asset('assets/plugins/prism/prism.css')}}" rel="stylesheet">
+<!--- Custom-scroll -->
+<link href="{{URL::asset('assets/plugins/custom-scroll/jquery.mCustomScrollbar.css')}}" rel="stylesheet">
 @section('title')
     اكمال عملية الدفع
 @stop
@@ -12,6 +15,9 @@
 
 
 @section('content')
+
+
+
 <main id="rlr-main" class="rlr-main--fixed-top">
     <div class="rlr-section__content--md-top">
       <div class="rlr-section rlr-section__my">
@@ -20,6 +26,65 @@
             <div class="container-xxl">
               <div class="entry-content">
                 <div class="woocommerce">
+                  @if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            title: '{{ session('success') }}',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 10000
+        });
+    </script>
+@endif
+
+@if (session()->has('Add'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{ session()->get('Add') }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
+
+@if (session()->has('Edit'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{ session()->get('Edit') }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
+
+@if (session()->has('delete'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{ session()->get('delete') }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
+@if (session()->has('Error'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{ session()->get('Error') }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
                   <div class="woocommerce-info">
                     <div class="rlr-page-title">
                       <span class="rlr-page-title__icon"> <i class="rlr-icon-font flaticon-carbon-shopping-cart"> </i> </span>
@@ -40,7 +105,9 @@
                     <div class="clear"></div>
                   </form>
                   <div class="woocommerce-notices-wrapper"></div>
-                  <form name="checkout" method="post" class="checkout woocommerce-checkout" action="https://ui.emprise.tours/order-received/" enctype="multipart/form-data" novalidate="novalidate">
+                  <form  method="post" class="checkout woocommerce-checkout" action="{{route('book.store')}}" enctype="multipart/form-data" novalidate="novalidate">
+                    {{ method_field('post') }}
+                    {{ csrf_field() }}
                     <div class="col2-set" id="customer_details">
                       <div class="col-1">
                         <div class="woocommerce-billing-fields">
@@ -52,58 +119,50 @@
                               <p class="form-row form-row-first validate-required" id="billing_first_name_field" data-priority="10">
                                 <label for="billing_first_name" class=""> الاسم الاول </label>
                                 <span class="woocommerce-input-wrapper">
-                                  <input type="text" class="input-text" name="billing_first_name" id="billing_first_name" placeholder="John" value="" autocomplete="given-name" />
+                                  <input type="text" class="input-text" name="name" id="billing_first_name" placeholder="John" value="" autocomplete="given-name" />
                                 </span>
                               </p>
                               <p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
                                 <label for="billing_last_name" class=""> الاسم الاخير </label>
                                 <span class="woocommerce-input-wrapper">
-                                  <input type="text" class="input-text" name="billing_last_name" id="billing_last_name" placeholder="doe" value="" autocomplete="family-name" />
+                                  <input type="text" class="input-text" name="end_data" id="billing_last_name" placeholder="doe" value="" autocomplete="family-name" />
                                 </span>
                               </p>
                               <p class="form-row form-row-wide validate-required validate-phone" id="billing_phone_field" data-priority="100">
                                 <label for="billing_phone" class=""> رقم الهاتف </label>
                                 <span class="woocommerce-input-wrapper">
-                                  <input type="tel" class="input-text" name="billing_phone" id="billing_phone" placeholder="XXXXXXXXXX" value="" autocomplete="tel" />
+                                  <input type="tel" class="input-text" name="phone" id="billing_phone" placeholder="XXXXXXXXXX" value="" autocomplete="tel" />
                                 </span>
                               </p>
                               <p class="form-row form-row-wide validate-required validate-email" id="billing_email_field" data-priority="110">
                                 <label for="billing_email" class=""> البريد الاكتروني </label>
                                 <span class="woocommerce-input-wrapper">
-                                  <input type="email" class="input-text" name="billing_email" id="billing_email" placeholder="jd@emprise.tours" value="" autocomplete="email" />
+                                  <input type="email" class="input-text" name="email" id="billing_email" placeholder="jd@emprise.tours" value="" autocomplete="email" />
                                 </span>
                               </p>
-                              <p class="form-row form-row-wide" id="billing_company_field" data-priority="30">
-                                <label for="billing_company" class="">
-                                  Company
-                                  <span class="optional"> (optional) </span>
-                                </label>
-                                <span class="woocommerce-input-wrapper">
-                                  <input type="text" class="input-text" name="billing_company" id="billing_company" placeholder="XXXXXXXXXX" value="" autocomplete="organization" />
-                                </span>
-                              </p>
+                           
                             </div>
-                         
+                           
                           
                             <h6 class="checkout__section-title">
                               <span> بيانات الدفع  </span>
                             </h6>
-                            <div id="payment" class="woocommerce-checkout-payment">
+                            <div id="payment"  class="woocommerce-checkout-payment">
                               <ul class="wc_payment_methods payment_methods methods">
                                 <li class="wc_payment_method payment_method_stripe payment-details__visa">
-                                  <label for="payment_method_stripe"> Visa Ending   </label>
-                                  <input id="payment_method_stripe" type="radio" class="input-radio" name="payment_method" value="stripe" data-order_button_text="" />
+                                  <label for="payment_method_stripe"> فيزا   </label>
+                                  <input id="payment_method_stripe" type="radio" class="input-radio" name="pay"  value="stripe" data-order_button_text="" />
                                 </li>
                                 <li class="wc_payment_method payment_method_cod payment-details__master-card">
-                                  <label for="payment_method_cod"> Mastercard Ending in 2568 </label>
-                                  <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method" value="cod" data-order_button_text="" />
+                                  <label for="payment_method_cod"> حساب بنكي </label>
+                                  <input id="payment_method_cod" type="radio" class="input-radio" name="pay"  value="cod" data-order_button_text="" />
                                   <div class="payment_box payment_method_cod" style="display: none">
                                     <p>Pay with cash upon delivery.</p>
                                   </div>
                                 </li>
                                 <li class="wc_payment_method payment_method_cheque payment-details__paypal">
-                                  <label for="payment_method_cheque"> Paypal </label>
-                                  <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque" data-order_button_text="" />
+                                  <label for="payment_method_cheque"> باي بال </label>
+                                  <input id="payment_method_cheque" type="radio" class="input-radio" name="pay"  value="cheque" data-order_button_text="" />
                                   <div class="payment_box payment_method_cheque" style="display: none">
                                     <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
                                   </div>
@@ -111,7 +170,7 @@
                                 <li class="wc_payment_method">
                                   <p class="form-row woocommerce-SavedPaymentMethods-saveNew woocommerce-validated payment-details__add-card">
                                     <label for="wc-stripe-new-payment-method" style="display: inline"> Add credit/debit card </label>
-                                    <input id="wc-stripe-new-payment-method" class="input-radio" name="payment_method" type="radio" checked="checked" value="true" />
+                                    <input id="wc-stripe-new-payment-method" class="input-radio" name="pay"  type="radio" checked="checked" value="true" />
                                   </p>
                                 </li>
                               </ul>
@@ -224,4 +283,13 @@
 
 @section('js')
 
+<script src="{{URL::asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>
+<!-- Internal Jquery.mCustomScrollbar js-->
+<script src="{{URL::asset('assets/plugins/custom-scroll/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<!--Internal  Clipboard js-->
+<script src="{{URL::asset('assets/plugins/clipboard/clipboard.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/clipboard/clipboard.js')}}"></script>
+<!-- Internal Prism js-->
+<script src="{{URL::asset('assets/plugins/prism/prism.js')}}"></script>
+<script src="{{ URL::asset('js/app.js') }}"></script>
 @endsection

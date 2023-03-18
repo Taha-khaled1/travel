@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class BookController extends Controller
 {
@@ -14,7 +14,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+     $book=   Book::all();
+     return view('trip.book_view',['book'=>$book]);
     }
 
     /**
@@ -30,7 +31,42 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'email' => 'required|email', 
+            'pay' => 'required', 
+            // 'start_data' => 'required',
+            // 'end_data' => 'required',
+            
+        ],[
+            'name.required' =>'يرجي ادخال اسمك',
+            'phone.required' =>'يرجي ادخال رقم الهاتف',
+            'email' => 'يرجي ادخال البريد الاكتروني', 
+
+            
+
+        ]);  
+        $trip_dates = $request->session()->get('trip_dates');
+
+        $data = array_merge($trip_dates, $validatedData);
+
+        $trip = new Book(); 
+        $trip->name = $data['name']; 
+        $trip->phone = $data['phone']; 
+        $trip->email = $data['email']; 
+        $trip->start_data = $data['start_data']; 
+        $trip->end_data = $data['end_data']; 
+        $trip->trip_id = $data['trip_id']; 
+        // $trip->description = $data->description; 
+     
+        $trip->save();
+        Alert::success('تمت العملية بنجاح!');
+      
+        // session()->flash('Add', 'تم اضافة القسم بنجاح ');
+        return back();
+
+
     }
 
     /**

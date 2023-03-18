@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
@@ -39,11 +40,16 @@ Route::controller(WebController::class)->group(function () {
     Route::get('/about', 'show')->name('about');
     Route::get('/alltrip', 'edit')->name('alltrip');
     Route::get('/check_out', 'checkout')->name('check_out');
+    Route::get('/showDetailsForm', 'showDetailsForm')->name('showDetailsForm');
     Route::get('/alltripType{id}', 'moreType')->name('alltrip.Type');
     Route::get('/detalisTrip{id}', 'detalisTrip')->name('detalis.Trip');
     // Route::post('/register', 'register');
 });
-
+Route::controller(BookController::class)->group(function () {
+    Route::post('/book.store', 'store')->name('book.store');
+    Route::get('/booksroute', 'index');
+    // Route::post('/register', 'register');
+});
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboard', 'index')->middleware(['auth', 'verified'])->name('dashboard');
     // Route::post('/logout', 'logout')->middleware('sanctum');

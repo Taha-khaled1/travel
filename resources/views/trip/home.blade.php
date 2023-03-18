@@ -48,16 +48,12 @@
                                                 <mark>المكان</mark>
                                             </label>
                                             <div class="rlr-banner-input-group__input-wrapper">
-                                                <input id="destination_input" name="location" type='text'
+                                                <input  name="location" type='text'
                                                     autocomplete="off"
                                                     class="rlr-banner-input-group__input destination_input"
                                                     placeholder="أدخل وجهتك">
-                                                <i class="rlr-icon-font  flaticon-map-marker ">
-
-                                                </i>
-                                                <ul id="home_destination_results"
-                                                    class="rlr-banner-input-group--location-dropdown rlr-autocomplete">
-                                                </ul>
+                                                
+                                              
                                             </div>
                                         </div> <!-- Activity -->
                                         <div
@@ -67,16 +63,14 @@
                                                 <mark>النشاط</mark>
                                             </label>
                                             <div class="rlr-banner-input-group__input-wrapper">
-                                                <input id="rlr-banner-input-group-activity" name="activity"
+                                                <input  name="activity"
                                                     type='text' autocomplete="off"
                                                     class="rlr-banner-input-group__input activity_autocomplete"
                                                     placeholder="القفز بالمنطاد">
                                                 <i class="rlr-icon-font  flaticon-outline-down ">
 
                                                 </i>
-                                                <ul id="autocomplete-results"
-                                                    class="rlr-banner-input-group--activity-dropdown rlr-autocomplete">
-                                                </ul>
+                                             
                                             </div>
                                         </div> <!-- Date -->
                                         <div
@@ -107,49 +101,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="rlr-banner-font">
-                            <a href="search-results--left-sidebar"
-                                class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__block ">
-                                <i class="rlr-icon-font  flaticon-yacht ">
-
-                                </i> <span class="">البحر والابحار
-                                </span>
-                            </a>
-
-                            <a href="search-results--left-sidebar"
-                                class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__block ">
-                                <i class="rlr-icon-font  flaticon-hiking ">
-
-                                </i>
-                                <span class="">جولات الرحلات
-
-                                </span>
-                            </a>
-
-                            <a href="search-results--left-sidebar"
-                                class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__block ">
-                                <i class="rlr-icon-font  flaticon-parachute ">
-
-                                </i> <span class="">القفز بالمظلة
-
-                                </span>
-                            </a> <a href="search-results--left-sidebar"
-                                class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__block ">
-                                <i class="rlr-icon-font  flaticon-train ">
-
-                                </i> <span class="">السفر القطار
-
-                                </span>
-                            </a>
-                            <a href="search-results--left-sidebar"
-                                class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__block ">
-                                <i class="rlr-icon-font  flaticon-temple ">
-
-                                </i> <span class="">المواقع الاثاريه
-                                </span>
-                            </a>
-
-                        </div>
+                       
                     </article>
                 </li>
             </ul>

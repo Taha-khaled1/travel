@@ -8728,7 +8728,7 @@ i[class^="flaticon-"]:before {
 .mc4wp-form-fields__input,
 .rlr-subscribe__input {
   -webkit-box-flex: 1;
-  background: url(../assets/images/icon-email.png) no-repeat 20px 50%;
+  background: url(../images/icon-email.png) no-repeat 20px 50%;
   border: 0 !important;
   display: block;
   -ms-flex: 1;
@@ -11252,7 +11252,7 @@ i[class^="flaticon-"]:before {
   }
 }
 .rlr-footer__menu__col--lg .rlr-footer__menu__col__letstalk {
-  background: url(../assets/images/ele-arrow-right.png) no-repeat right 50%;
+  background: url(../images/ele-arrow-right.png) no-repeat right 50%;
   display: inline-block;
   padding: 10px 50px 10px 0;
 }
@@ -11278,7 +11278,7 @@ i[class^="flaticon-"]:before {
 }
 .rlr-footer__menu__col__subscribe input.input {
   -webkit-box-flex: 1;
-  background: url(../assets/images/icon-email.png) no-repeat 20px 50%;
+  background: url(../images/icon-email.png) no-repeat 20px 50%;
   border: 0 !important;
   display: block;
   -ms-flex: 1;

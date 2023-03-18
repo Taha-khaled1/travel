@@ -30,9 +30,7 @@
               <li class="navigation-dropdown-item">
                 <a class="navigation-dropdown-link" href="./my-account-pages--order.html">حجوزاتك</a>
               </li>
-              <li class="navigation-dropdown-item">
-                <a class="navigation-dropdown-link" href="./search-results--no-sidebar.html">المفضلة</a>
-              </li>
+            
               <li class="navigation-dropdown-item">
                 <hr class="dropdown-divider rlr-dropdown__divider" />
               </li>

@@ -22,13 +22,33 @@ class WebController extends Controller
           return view('trip.home',['tripAdvun'=>$tripAdvun,'event'=>$event,'tripship'=>$tripship,'tripcar'=>$tripcar]);
       
     }
-    public function checkout()
+    public function checkout(Request $request)
     {
 
           $event   =   Event::all();
-          return view('trip.check_out',['event'=>$event]);
+          $validated = $request->validate([
+            'start_data' => 'required',
+            'end_data' => 'required',
+            'trip_id' => '',
+             ],[           
+           'start_data' => 'يرجي ادخال تاريخ البدايه', 
+           'end_data' => 'يرجي ادخال تاريخ النهايه',
+             ]);
+
+         $request->session()->put('trip_dates', $validated);
+
+        return redirect()->route('showDetailsForm',['event'=>$event]);
+        
       
     }
+
+
+    public function showDetailsForm()
+    {  $event   =   Event::all();
+        return view('trip.check_out',['event'=>$event]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */

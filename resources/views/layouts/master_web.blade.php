@@ -19,6 +19,7 @@
     <main id="rlr-main" class="rlr-main">
         @include('layouts.head_web_design')
         @yield('page-header')
+        @include('sweetalert::alert')
         @yield('content')
        
    </main>
