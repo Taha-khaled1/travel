@@ -11,8 +11,9 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
+use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,45 @@ require __DIR__.'/auth.php';
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
+Route::get('viewmass',function ()
+{
+     return  view('trip.sms_view');
+})->name('viewmass');
+
+
+Route::post('mass',function (Request $request)
+{
+     try {
+        $account_sid = env('TWILIO_ACCOUNT_SID');
+        $auth_token = env('TWILIO_AUTH_TOKEN');
+        $client =new Client($account_sid, $auth_token);
+        $message =  $client->messages->create(
+            'whatsapp:+15074971407',
+         [     
+            'body'=>'Hello there!',
+            'from'=>'whatsapp:+15074971407',
+           
+         ]
+           
+        ); 
+        
+        return $message;
+
+
+     } catch (\Throwable $e) {
+     
+        return $e->getMessage();
+
+
+     }
+
+
+})->name('mass');
+
+
+
 Route::controller(WebController::class)->group(function () {
     Route::get('/', 'index'); 
     Route::get('home', 'index')->name('home');
@@ -48,7 +88,7 @@ Route::controller(WebController::class)->group(function () {
 Route::controller(BookController::class)->group(function () {
     Route::post('/book.store', 'store')->name('book.store');
     Route::get('/booksroute', 'index');
-    // Route::post('/register', 'register');
+    Route::post('/book.destroy', 'destroy')->name('book.destroy');
 });
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboard', 'index')->middleware(['auth', 'verified'])->name('dashboard');

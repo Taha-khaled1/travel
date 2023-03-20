@@ -76,7 +76,7 @@
 												<th class="wd-15p border-bottom-0"> هاتف المستخدم</th>
 												<th class="wd-20p border-bottom-0"> البريد الاكتروني</th>
                                                 <th class="wd-20p border-bottom-0"> اسم الفاعليه</th>
-                                                <th class="wd-20p border-bottom-0"> اسم الفاعليه</th>
+                                                <th class="wd-20p border-bottom-0"> سعر الفاعليه</th>
 												<th class="wd-15p border-bottom-0">العمليات</th>
 											</tr>
 										</thead>
@@ -95,21 +95,23 @@
 												<td>{{$bok->name}}</td>
 												<td>{{$bok->phone}}</td>
 												<td>{{$bok->email}}</td>
-                                                <td>{{$bok->phone}}</td>
-												<td>{{$bok->email}}</td>
+                                                <td>{{$bok->trip->name}}</td>
+												<td>{{$bok->trip->price}}</td>
 												<td>
 													<div style="display: flex;">
-														<button class="btn btn-outline-success btn-sm mr-1"
-															{{-- data-name="{{ $user->name }}"
-															data-pro_id="{{ $user->id }}" data-user_type={{ $user->user_type }}
-															data-phone="{{ $user->phone }}" data-country="{{ $user->country }}"
-															data-number_ads="{{ $user->number_ads }}" --}}
-															data-toggle="modal" data-target="#edit_user">تعديل</button>
-												
-													
+														
+															{{-- {{ route('detalis.Trip',$item->id) }} --}}
+
+															<form action="{{ route('detalis.Trip',$bok->trip_id) }}">
+                                                 
+																<button class="btn btn-outline-success btn-sm"
+																 {{-- name="id"
+																	value={{ $trip->id }} data-toggle="modal" --}}
+																	data-target="#edit_trip">الفاعليه</button>
+															</form>
 												
 														<button class="btn btn-outline-danger btn-sm mr-1"
-															{{-- data-pro_id="{{ $trip->id }}" data-name="{{ $trip->name }}" --}}
+															data-id="{{ $bok->id }}" data-name="{{ $bok->name }}"
 															data-toggle="modal" data-target="#modaldemo9">حذف</button>
 													</div>
 												</td>
@@ -211,13 +213,13 @@
 							<h6 class="modal-title">حذف القسم</h6><button aria-label="Close" class="close" data-dismiss="modal"
 								type="button"><span aria-hidden="true">&times;</span></button>
 						</div>
-						<form action="{{ route("blogs.destroy") }}"method="post">
+						<form action="{{ route("book.destroy") }}"method="post">
 							{{ method_field('post') }}
 							{{ csrf_field() }}
 							<div class="modal-body">
 								<p>هل انت متاكد من عملية الحذف ؟</p><br>
 								<input type="hidden" name="id" id="id" value="">
-								<input class="form-control" name="title" id="title" type="text" readonly>
+								<input class="form-control" name="name" id="name" type="text" readonly>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
@@ -282,10 +284,10 @@
     $('#modaldemo9').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
-        var title = button.data('title')
+        var name = button.data('name')
         var modal = $(this)
         modal.find('.modal-body #id').val(id);
-        modal.find('.modal-body #title').val(title);
+        modal.find('.modal-body #name').val(name);
     })
 </script>
 
@@ -301,12 +303,12 @@
 	  $('#exampleModal2').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) 
 		var id = button.data('id')
-		var title = button.data('title')
+		var name = button.data('name')
 		var content = button.data('content')
 		var image = button.data('image')
 		var modal = $(this)
 		modal.find('.modal-body #id').val(id)
-		modal.find('.modal-body #title').val(title)
+		modal.find('.modal-body #name').val(name)
 		modal.find('.modal-body #content').val(content)
 		modal.find('.modal-body #image').attr('src', image)
 	  })

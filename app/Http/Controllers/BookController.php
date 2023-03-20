@@ -96,8 +96,16 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->id;
+        $sections = Book::findorFail($id);
+        $file_path = public_path($sections->image);
+     
+        $sections->delete();
+
+      
+        session()->flash('delete','تم حذف الحجز بنجاح');
+        return back();
     }
 }
