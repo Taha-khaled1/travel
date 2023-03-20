@@ -94,7 +94,7 @@
 
 
    @foreach ($blogs as $item)
-   <div class="col-md-6 col-lg-4">
+   <div class="col-md-6 col-lg-4 col-6">
     <article class="rlr-postcard">
       <img class="rlr-postcard__thumbnail" src="{{ URL::asset($item->image) }}" alt="blog image" />
       <div class="rlr-postcard__summary">

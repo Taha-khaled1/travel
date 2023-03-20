@@ -107,7 +107,7 @@ h1 {
     <div class="row rlr-search-results-page__card-wrapper">
    
       @foreach ($trip as $item)
-      <div class="col-md-6 col-xl-4 col-xxl-3">
+      <div class="col-md-6 col-xl-4 col-xxl-3 col-6">
           @include('layouts.product', ['item' => $item])
           
       </div>
