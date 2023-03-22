@@ -115,29 +115,26 @@
                                         <td>{{ $trip->price }}</td>
                                         <td>{{ $trip->status }}</td>
 
-
+ 
                                         <td>
                                             <div style="display: flex;">
 
-                                                <button class="btn btn-outline-success btn-sm"
-                                                    {{-- data-name="{{ $user->name }}"
-                                                    data-pro_id="{{ $user->id }}" data-user_type={{ $user->user_type }}
-                                                    data-phone="{{ $user->phone }}" data-country="{{ $user->country }}"
-                                                    data-number_ads="{{ $user->number_ads }}" --}}
-                                                    data-toggle="modal" data-target="#edit_user">تعديل</button>
-
-
-                                                <form action="{{ URL::route('trip.show',2) }}">
-                                                 
+                                                <form action="{{ URL::route('trip.show',$trip->id ) }}">
                                                     <button class="btn btn-outline-success btn-sm"
-                                                     {{-- name="id"
-                                                        value={{ $trip->id }} data-toggle="modal" --}}
-                                                        data-target="#edit_trip">رؤية الحدث</button>
+                                                        data-target="#edit_trip">تعديل</button>
+                                                </form>
+
+
+                                                <form action="{{ URL::route('detalis.Trip',$trip->id ) }}">
+                                                    <button class="btn btn-outline-success btn-sm"
+                                                        data-target="#edit_trip">رؤية الفاعليه</button>
                                                 </form>
 
                                                 <button class="btn btn-outline-danger btn-sm "
                                                     data-pro_id="{{ $trip->id }}" data-name="{{ $trip->name }}"
-                                                    data-toggle="modal" data-target="#modaldemo9">حذف</button>
+                                                    data-toggle="modal" data-target="#modaldemo9">حذف
+                                                </button>
+
                                             </div>
                                         </td>
 

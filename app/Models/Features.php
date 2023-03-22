@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Features extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     public function trip()
     {
         return $this->belongsTo(Trip::class,'trip_id');

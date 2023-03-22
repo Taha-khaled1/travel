@@ -33,7 +33,7 @@ class TripController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {   return $request;
+    {   
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'country' => 'required|string|max:255',
@@ -41,7 +41,9 @@ class TripController extends Controller
             'season' => 'required|string|max:255',
             'working_days' => 'required',
             'price' => 'required|numeric',
-            'description' => 'required|string',
+            'price_hour' => 'required|numeric',
+            'price_day' => 'required|numeric',
+            // 'description' => 'required|string',
            
             'start_time' => 'required|string',
             'end_time' => 'required|string',
@@ -58,7 +60,7 @@ class TripController extends Controller
             'event_id' => 'يرجي ادخال نوع العقار',
             'price' => 'يرجي ادخال السعر',
             'addrees' => 'يرجي ادخال العنوان',
-            'description' => 'يرجي ادخال الوصف',
+            // 'description' => 'يرجي ادخال الوصف',
             'address' =>'يرجي ادخال العنوان',
             'start_time' =>'يرجي ادخال تاريخ البدايه',
             'end_time' =>'يرجي ادخال تاريخ النهايه',
@@ -73,7 +75,7 @@ class TripController extends Controller
         ///
         $trip = new Trip(); 
         $trip->name = $request->name; 
-        $trip->city = $request->city; 
+       
         $trip->country = $request->country; 
         $trip->event_id = $request->event_id; 
         $trip->price = $request->price; 
@@ -84,14 +86,14 @@ class TripController extends Controller
 
 
         $tripDetalis = new TripDetalis(); 
-        $tripDetalis->description = $request->description; 
+        $tripDetalis->description = $request->description ?? 'عند اضافة وصف سيظهر هنا'; 
        // $tripDetalis->bank = 'حساب بنكي'; 
         $tripDetalis->working_days = $request->working_days; 
         $tripDetalis->start_time = $request->start_time; 
         $tripDetalis->end_time = $request->end_time; 
         $tripDetalis->longitude = "35.89999"; 
         $tripDetalis->latitude = "37.8888"; 
-
+     
         $tripDetalis->city = $request->city;
         $tripDetalis->price_day = $request->price_day;
         $tripDetalis->price_hour = $request->price_hour;
@@ -109,7 +111,7 @@ class TripController extends Controller
             $model->save();
         }
 
-        session()->flash('Add', 'تم اضافة القسم بنجاح ');
+        session()->flash('Add', 'تم الا ضافة  بنجاح ');
         return back();
     }
 
@@ -134,9 +136,88 @@ class TripController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Trip $trip)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'city' => 'required|string|max:255', 
+            // 'season' => 'required|string|max:255',
+            // 'working_days' => 'required',
+            'price' => 'required|numeric',
+            'price_hour' => 'required|numeric',
+            'price_day' => 'required|numeric',
+            // 'description' => 'required|string',
+           
+            'start_time' => 'required|string',
+            'end_time' => 'required|string',
+            // 'event_id' => 'required',
+            'addrees' =>'required|string',
+          
+
+        ],[
+            'name.required' =>'يرجي ادخال اسم العقار',
+           
+            'country' => 'يرجي ادخال الدوله', 
+            'city' => 'يرجي ادخال المدينه', 
+            // 'season' => 'يرجي ادخال الموسم الملائمه',
+            // 'event_id' => 'يرجي ادخال نوع العقار',
+            'price' => 'يرجي ادخال السعر',
+            'addrees' => 'يرجي ادخال العنوان',
+            'address' =>'يرجي ادخال العنوان',
+            'start_time' =>'يرجي ادخال تاريخ البدايه',
+            'end_time' =>'يرجي ادخال تاريخ النهايه',
+            // 'working_days' =>'يرجي ادخال ايام العمل',
+            'price.numeric' =>'يرجي ادخال السعر عدد وليس اي شئ اخر',
+
+        ]);
+
+        $trip = Trip::findOrFail($id);
+        if ($request->has('image')) {
+
+
+            $file_path = public_path($trip->image);
+            echo $file_path;
+            printf($file_path);
+            echo'--------------------------------------------------------------------------------------------------------------';
+            if(file_exists($file_path)) {
+                unlink($file_path);
+            }
+        
+            // Store the new image
+            $filename = time().'.'.$request->image->getClientOriginalExtension();
+            $path = $request->image->storeAs('catogeryimage', $filename,'Taha');
+    
+            // Update the trip with the new image path
+            $trip->image = $path;
+        }
+
+
+        $trip->name = $request->name; 
+        $trip->country = $request->country; 
+        $trip->price = $request->price;  
+        $trip->status =1; 
+        $trip->save();
+
+
+        $tripDetalis = TripDetalis::where('trip_id', $id)->firstOrFail();
+
+
+        $tripDetalis->description = $request->description ?? 'عند اضافة وصف سيظهر هنا'; 
+        $tripDetalis->start_time = $request->start_time; 
+        $tripDetalis->end_time = $request->end_time; 
+        $tripDetalis->city = $request->city;
+        $tripDetalis->price_day = $request->price_day;
+        $tripDetalis->price_hour = $request->price_hour;
+        $tripDetalis->addrees = $request->addrees; 
+        $tripDetalis->save();
+
+        session()->flash('Edit', 'تم االتعديل  بنجاح ');
+
+      
+        $trips= Trip::all();
+        $events=  Event::all();
+        return view('trip.trip_view',['trips'=>$trips,'events'=>$events]);
     }
 
     /**

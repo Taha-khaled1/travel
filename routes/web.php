@@ -122,6 +122,7 @@ Route::controller(TripController::class)->group(function () {
     Route::get('/inserttrip', 'index')->name('inserttrip');
     Route::get('/viewTrip', 'viewTrip')->name('viewTrip');
      Route::post('/trip.store', 'store')->name('trip.store');
+     Route::post('/trip.update{id}', 'update')->name('trip.update');
     Route::get('/trip.show{id}', 'show')->name('trip.show');
     // Route::post('/user.update', 'update')->name('user.update');
     Route::post('/trip.destroy', 'destroy')->name('trip.destroy');

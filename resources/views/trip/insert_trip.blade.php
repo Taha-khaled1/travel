@@ -75,7 +75,7 @@
     @endif
 
 
-    <form action="{{ route('trip.store') }}" method="POST">
+    <form action="{{ route('trip.store') }}" method="POST" enctype="multipart/form-data" >
         {{ method_field('post') }}
         {{ csrf_field() }}
         <!-- row -->
@@ -110,7 +110,7 @@
                             <div class="form-group">
                                 <p>عنوان الحدث كاملا</p>
                                 <input type="text" class="form-control" id="inputName" placeholder="عنوان..."
-                                    name="ciadressty">
+                                    name="addrees">
                             </div>
                         </form>
                     </div>
@@ -129,10 +129,10 @@
                         <div class="mb-4">
                             <p class="mg-b-10">ملائم للفصول</p>
                             <select multiple="multiple" class="testselect2" name="season">
-                                <option selected value="volvo">الربيع</option>
-                                <option value="saab">الخريف</option>
-                                <option value="mercedes">الصيف</option>
-                                <option value="audi">الشتاء</option>
+                                <option selected value="الربيع">الربيع</option>
+                                <option value="الخريف">الخريف</option>
+                                <option value="الصيف">الصيف</option>
+                                <option value="الشتاء">الشتاء</option>
                             </select>
                         </div>
 
@@ -140,13 +140,13 @@
                         <div class="mb-4">
                             <p class="mg-b-10">مواعيد العمل</p>
                             <select multiple="multiple" class="testselect2" name="working_days">
-                                <option selected value="volvo">السبت</option>
-                                <option value="saab">الاحد</option>
-                                <option value="mercedes">الاثنين</option>
-                                <option value="audi">الثلاثاء</option>
-                                <option selected value="volvo">الاربعاء</option>
-                                <option value="saab">الخميس</option>
-                                <option value="mercedes">الحمعه</option>
+                                <option selected value="السبت">السبت</option>
+                                <option value="الاحد">الاحد</option>
+                                <option value="الاثنين">الاثنين</option>
+                                <option value="الثلاثاء">الثلاثاء</option>
+                                <option selected value="الاربعاء">الاربعاء</option>
+                                <option value="الخميس">الخميس</option>
+                                <option value="الحمعه">الحمعه</option>
 
                             </select>
                         </div>
@@ -164,27 +164,27 @@
 
                         <div class="mb-4">
                             <p class="mg-b-10">مميزات الحدث</p>
-                            <select multiple="multiple" class="testselect2" name="features">
+                            <select multiple="multiple" class="testselect2" name="future[]">
 
 
 
-                                <option selected value="volvo">اقتصادي</option>
-                                <option value="saab">خدمات النقل</option>
-                                <option value="mercedes">إيداع مجاني للأمتعة</option>
-                                <option value="audi"> خدمات الغسيل</option>
+                                <option selected value="اقتصادي">اقتصادي</option>
+                                <option value="خدمات النقل">خدمات النقل</option>
+                                <option value="إيداع مجاني للأمتعة">إيداع مجاني للأمتعة</option>
+                                <option value="خدمات الغسيل"> خدمات الغسيل</option>
 
 
-                                <option selected value="volvo">القهوة والشاي</option>
-                                <option value="saab">الإنترنت - واي فاي</option>
-                                <option value="mercedes">الغسيل والتنظيف الجاف</option>
-                                <option value="audi"> الرحلات البحرية</option>
+                                <option selected value="القهوة والشاي">القهوة والشاي</option>
+                                <option value="الإنترنت - واي فاي">الإنترنت - واي فاي</option>
+                                <option value="الغسيل والتنظيف الجاف">الغسيل والتنظيف الجاف</option>
+                                <option value="الرحلات البحرية"> الرحلات البحرية</option>
 
 
 
-                                <option selected value="volvo"> حوض استحمام ساخن / جاكوزي على سطح السفينة</option>
-                                <option value="saab">الأحداث والاجتماعات</option>
-                                <option value="mercedes">الصف الأول</option>
-                                <option value="audi">اقتصاد مميز</option>
+                                <option selected value="حوض استحمام ساخن / جاكوزي على سطح السفينة"> حوض استحمام ساخن / جاكوزي على سطح السفينة</option>
+                                <option value="الأحداث والاجتماعات">الأحداث والاجتماعات</option>
+                                <option value="الصف الأول">الصف الأول</option>
+                                <option value="اقتصاد مميز">اقتصاد مميز</option>
 
 
 
@@ -221,8 +221,8 @@
                                     <div class="input-group-text">
                                         <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
                                     </div>
-                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY"
-                                    type="start_time">
+                                </div><input class="form-control fc-datepicker" name="start_time" placeholder="MM/DD/YYYY"
+                                    type="data">
                             </div>
                         </div><!-- wd-200 -->
 
@@ -234,7 +234,7 @@
                                     <div class="input-group-text">
                                         <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
                                     </div>
-                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="end_time">
+                                </div><input class="form-control fc-datepicker" name="end_time" placeholder="MM/DD/YYYY" type="data">
                             </div>
                         </div><!-- wd-200 -->
 
@@ -291,7 +291,8 @@
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
-                                </div><input aria-label="Amount (to the nearest dollar)" class="form-control" name="price"
+                                </div>
+                                <input aria-label="Amount (to the nearest dollar)" class="form-control" name="price"
                                     type="text">
                                 <div class="input-group-append">
                                     <span class="input-group-text">سعر المده كاملا</span>
@@ -306,6 +307,14 @@
 
 
 
+     
+
+
+
+
+
+
+
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
@@ -313,16 +322,38 @@
                             اكتب وصف الحدث
                         </div>
                         <p class="mg-b-20">يجب ان تشرح كل شئ عن الحدث وهذه سيفيد العملاء في الوثوق في هذه الحدث.</p>
-                        <div class="ql-wrapper ql-wrapper-demo bg-gray-100" name="des">
-                            <div id="quillEditor" name="des" >
-                                <p>.....</p>
+                        <div class="ql-wrapper ql-wrapper-demo bg-gray-100" name="description">
+                            <div id="quillEditor" name="description" enctype="multipart/form-data" ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 
 
+
+
+
+
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="card-title mb-1">رفع صوره</h6>
                             </div>
+                            <div class="row mb-4">
+                              
+                                <div class="col-sm-12 col-md-4 mg-t-10 mg-sm-t-0">
+                                    <input type="file" class="dropify" data-default-file="{{URL::asset('assets/img/photos/1.jpg')}}" data-height="200"  name="image"  enctype="multipart/form-data"/>
+                                </div>
+                                
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
-            </div>
+         
 
 
 
@@ -330,37 +361,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="card-body">
-
-                        <div>
-                            <h6 class="card-title mb-1">رفع صوره </h6>
-                        </div>
-
-                        <div>
-                            <input id="demo" type="file" name="files"
-                                accept=".jpg, .png, image/jpeg, image/png, html, zip, css,js" multiple>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <button type="submit" class="btn btn-danger"
                 style="width:200px; height:50px; background-color: blue; color:white; margin: 0 auto;">حفظ العقار</button>
