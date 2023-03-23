@@ -13,7 +13,7 @@
         <div class="rlr-footer__menu">
             <nav class="rlr-footer__menu__col rlr-footer__menu__col--lg text-end">
                 <h4>ابقى على تواصل</h4>
-                <a href="#" class="rlr-footer__menu__col__letstalk p-0">لنتحدث</a>
+            
                 <form class="rlr-subscribe" data-aos="fade-up" data-aos-offset="250" data-aos-duration="700">
                     <button class="btn">ارسل الان!</button>
 

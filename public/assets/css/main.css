@@ -3374,7 +3374,8 @@ i[class^="flaticon-"]:before {
   box-sizing: border-box;
   text-decoration: none;
 }
-.navigation.fixed-top {
+.navigation.fixed-top {    
+  height: 130px;
   left: 0;
   position: fixed;
   right: 0;

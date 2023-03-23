@@ -5,7 +5,7 @@
         <div class="navigation-brand-text">
           <div class="rlr-logo rlr-logo__navbar-brand rlr-logo--default">
             <a href="./index.html">
-              <img src="{{URL::asset('./assets/svg/emprise-logo-dark.svg')}}" alt="#" class="" />
+              <img src="{{URL::asset('logoweb.png')}}" alt="#" class="" width="150" height="80" />
             </a>
           </div>
         </div>
@@ -100,7 +100,7 @@
           <div class="navigation-brand-text">
             <div class="rlr-logo rlr-logo__navbar-brand rlr-logo--default">
               <a href="./index.html">
-                <img src="{{URL::asset('./assets/svg/emprise-logo-dark.svg')}}" alt="#" class="" />
+                <img src="{{URL::asset('logoweb.png')}}" alt="#" class="" width="150" height="80" />
               </a>
             </div>
           </div>

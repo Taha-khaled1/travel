@@ -30,7 +30,8 @@
   text-decoration: none;
 }
 
-.navigation.fixed-top {
+.navigation.fixed-top {    
+  height: 130px;
   position: fixed;
   top: 0;
   right: 0;
