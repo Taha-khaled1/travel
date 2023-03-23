@@ -28,15 +28,15 @@ Route::controller(FlutterAppController::class)->group(function () {
     Route::get('catogery', 'catogery')->name('catogery');
     Route::get('tripdetalis/{id}', 'showdetalis')->name('tripdetalis');
     Route::get('searchnameorcountrey', 'search')->name('searchnameorcountrey');
-
+    Route::post('booktrip', 'booktrip')->name('booktrip');
 
    
 
 
 
-    Route::post('updateviews/{id}', 'updateViews')->name('updateviews');
-    Route::post('addreport', 'addreport')->name('addreport');
-    Route::post('addenqueris', 'addenqueris')->name('addenqueris');
-    Route::post('addtrip', 'store')->name('addtrip');
-    Route::get('mostview', 'getMostViewedProperties')->name('mostview');
+    // Route::post('updateviews/{id}', 'updateViews')->name('updateviews');
+
+    // Route::post('addenqueris', 'addenqueris')->name('addenqueris');
+    // Route::post('addtrip', 'store')->name('addtrip');
+    // Route::get('mostview', 'getMostViewedProperties')->name('mostview');
     })->middleware(['auth:sanctum']);

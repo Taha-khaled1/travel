@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 use App\Models\Event;
 use App\Models\Trip;
 use Illuminate\Http\Request;
@@ -103,6 +104,27 @@ class FlutterAppController extends Controller
                 'trip' => $trips, 
                
         ]);
+        }
+
+
+
+        public function booktrip(Request $request)
+        {
+            $book = new Book(); 
+            $book->trip_id = $request->trip_id; 
+            $book->name = $request->name;
+            $book->phone = $request->phone;
+            $book->description = $request->description;
+            $book->email = $request->email;
+            $book->start_data = $request->start_data;
+            $book->end_data = $request->end_data;
+            $book->pay = $request->pay;
+            $book->save();
+
+
+
+
+            return response()->json(['message' => 'success']);
         }
 
 }
