@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-     $book=   Book::all();
+     $book =   Book::where('isbook',0)->get();
      return view('trip.book_view',['book'=>$book]);
     }
 
@@ -72,22 +72,37 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function booksIsbook()
     {
-        //
+        $book=   Book::where('isbook',1)->get();
+        return view('trip.is_book_view',['book'=>$book]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit($id)
+
     {
-        //
+        $trip = Book::findorFail($id);
+        $trip->isbook =1;
+        $trip->save();
+        session()->flash('Add','تم اضافتها لقائمة التي تم حجزها');
+        // return back();
+        $book=   Book::where('isbook',1)->get();
+        return view('trip.is_book_view',['book'=>$book]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    public function unedit($id)
+
+    {
+        $trip = Book::findorFail($id);
+        $trip->isbook= 0;
+        $trip->save();
+        session()->flash('delete','تم حذفها من القائمة بنجاح');
+        return back();
+    }
+
     public function update(Request $request, Book $book)
     {
         //

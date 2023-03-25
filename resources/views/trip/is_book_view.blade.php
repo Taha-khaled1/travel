@@ -100,25 +100,20 @@
 												<td>{{$bok->trip->price}}</td>
 												<td>
 													<div style="display: flex;">
-														
-
-
-
-														<form action="{{ route('book.edit',$bok->id) }}" method="POST">
-															{{ method_field('post') }}
-															{{ csrf_field() }}
+														<form action="{{ route('book.unedit',$bok->id) }}"  method="POST">
+														    {{ method_field('post') }}
+                                                            {{ csrf_field() }}
 															<button class="btn btn-outline-success btn-sm"
 															
-																data-target="#edit_trip">الحجز الان</button>
+																data-target="#edit_trip">الغاء الحجز</button>
 														</form>
-
-
-												
+															{{-- {{ route('detalis.Trip',$item->id) }} --}}
 
 															<form action="{{ route('detalis.Trip',$bok->trip_id) }}">
-                                                 
+																@csrf
 																<button class="btn btn-outline-success btn-sm"
-																
+																 {{-- name="id"
+																	value={{ $trip->id }} data-toggle="modal" --}}
 																	data-target="#edit_trip">الفاعليه</button>
 															</form>
 												
@@ -126,7 +121,6 @@
 															data-id="{{ $bok->id }}" data-name="{{ $bok->name }}"
 															data-toggle="modal" data-target="#modaldemo9">حذف
 														</button>
-
 													</div>
 												</td>
 											</tr>

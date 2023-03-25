@@ -88,6 +88,9 @@ Route::controller(WebController::class)->group(function () {
 Route::controller(BookController::class)->group(function () {
     Route::post('/book.store', 'store')->name('book.store');
     Route::get('/booksroute', 'index');
+    Route::get('/booksIsbook', 'booksIsbook')->name('booksIsbook');
+    Route::post('/bookedit{id}', 'edit')->name('book.edit');
+    Route::post('/bookunedit{id}', 'unedit')->name('book.unedit');
     Route::post('/book.destroy', 'destroy')->name('book.destroy');
 });
 Route::controller(DashboardController::class)->group(function () {

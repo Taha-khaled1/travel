@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('start_data')->nullable();
             $table->string('end_data')->nullable();
             $table->string('description')->nullable();
+            $table->string('isbook')->default(0);
             $table->string('status')->default('Pending');
             $table->string('pay')->default('bank_account');// visa : master_card : bank_account : paypal : other
             $table->timestamps();

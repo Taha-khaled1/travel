@@ -10071,6 +10071,8 @@ i[class^="flaticon-"]:before {
   }
 }
 .rlr-overview-detail__icons {
+  display: flex;
+  align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-box-align: center;
@@ -10083,10 +10085,14 @@ i[class^="flaticon-"]:before {
   flex-direction: row;
 }
 .rlr-overview-detail__icons .rlr-icon-font {
+  display: flex;
+  align-items: center;
   color: var(--brand);
   font-size: 1.5rem;
 }
 .rlr-overview-detail__icon-group {
+  display: flex;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   display: -webkit-box;
@@ -10100,10 +10106,14 @@ i[class^="flaticon-"]:before {
 }
 @media (min-width: 768px) {
   .rlr-overview-detail__icon-group {
+    display: flex;
+    align-items: center;
     width: 33.33333%;
   }
 }
 .rlr-overview-detail__label {
+  display: flex;
+  align-items: center;
   color: var(--body-color);
   letter-spacing: 0.5px;
 }

@@ -206,15 +206,15 @@
                     </div>
                   </div>
                   <div class="rlr-overview-detail__icon-group">
-                    <span class="rlr-overview-detail__label">حجم الافراد للحدث</span>
+                    <span class="rlr-overview-detail__label">اقصي عدد افراد</span>
                     <div class="rlr-overview-detail__icons">
-                      <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-add-user"> </i> <span class="">8 </span></figure>
+                      <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-add-user"> </i> <span class="">{{$trip->trip_details->group_size}} </span></figure>
                     </div>
                   </div>
                   <div class="rlr-overview-detail__icon-group">
                     <span class="rlr-overview-detail__label">العمر</span>
                     <div class="rlr-overview-detail__icons">
-                      <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-carbon-tall-man"> </i> <span class="">7+ </span></figure>
+                      <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-carbon-tall-man"> </i> <span class="">{{$trip->trip_details->age}} </span></figure>
                     </div>
                   </div>
                   <div class="rlr-overview-detail__icon-group">
@@ -224,7 +224,56 @@
                     </div>
                   </div>
                 </div>
+
+
+
                 
+<br>
+<div class="rlr-overview-detail__icon-groupset">
+  <div class="rlr-overview-detail__icon-group">
+    <span class="rlr-overview-detail__label">بداية الحجز</span>
+    <div class="rlr-overview-detail__icons">
+      <figure class="rlr-icon-text"><span class="">{{$trip->trip_details->start_time}}</span></figure>
+    </div>
+  </div>
+  <div class="rlr-overview-detail__icon-group">
+    <span class="rlr-overview-detail__label">نهاية الحجز</span>
+    <div class="rlr-overview-detail__icons">
+      <figure class="rlr-icon-text"><span class=""> {{$trip->trip_details->end_time}}</span></figure>
+    </div>
+  </div>
+  <div class="rlr-overview-detail__icon-group">
+    <span class="rlr-overview-detail__label">مناسب للفصول</span>
+    <div class="rlr-overview-detail__icons">
+      <figure class="rlr-icon-text"> <span class="">{{$trip->trip_details->season}} </span></figure>
+    </div>
+  </div>
+  @php
+      $workingDays = explode(',', $trip->trip_details->working_days);
+  @endphp
+  <div class="rlr-overview-detail__icon-group">
+    <span class="rlr-overview-detail__label">ايام العمل</span>
+    <div class="rlr-overview-detail__icons">
+      <figure class="rlr-icon-text"><span class="">{{count($workingDays)}}</span></figure>
+    </div>
+  </div>
+  <div class="rlr-overview-detail__icon-group">
+    <span class="rlr-overview-detail__label">سعر الساعه</span>
+    <div class="rlr-overview-detail__icons">
+      <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-carbon-tall-man"> </i> <span class=""> {{$trip->trip_details->price_hour}}</span></figure>
+    </div>
+  </div>
+  <div class="rlr-overview-detail__icon-group">
+    <span class="rlr-overview-detail__label">سعر اليوم</span>
+    <div class="rlr-overview-detail__icons">
+      <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-map-marker"> </i> <span class=""> {{$trip->trip_details->price_day}}</span></figure>
+    </div>
+  </div>
+</div>
+
+
+
+
               </div>
             </div>
           </div>
