@@ -363,7 +363,7 @@
 
 
             <button type="submit" class="btn btn-danger"
-                style="width:200px; height:50px; background-color: blue; color:white; margin: 0 auto;">حفظ العقار</button>
+                style="width:200px; height:50px; background-color: blue; color:white; margin: 0 auto;">حفظ الفاعليه</button>
 
         </div>
         <!-- row closed -->

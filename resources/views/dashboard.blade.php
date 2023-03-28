@@ -1,8 +1,16 @@
 @extends('layouts.master')
 @section('css')
+<!--  Owl-carousel css-->
+<link href="{{URL::asset('assets/plugins/morris.js/morris.css')}}" rel="stylesheet">
+<link href="{{URL::asset('assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
+<!-- Maps css -->
+<link href="{{URL::asset('assets/plugins/morris.js/morris.css')}}" rel="stylesheet">
+<link href="{{URL::asset('assets/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
+
 @section('title')
     لوحة التحكم
 @stop
+
 <!--  Owl-carousel css-->
 <link href="{{URL::asset('assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
 <!-- Maps css -->
@@ -28,7 +36,7 @@
 						<div class="card overflow-hidden sales-card bg-primary-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">TODAY ORDERS</h6>
+									<h6 class="mb-3 tx-12 text-white">عدد الحجوزات بانتظار المراجعه</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -50,7 +58,7 @@
 						<div class="card overflow-hidden sales-card bg-danger-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">TODAY EARNINGS</h6>
+									<h6 class="mb-3 tx-12 text-white">عدد المستخدمين</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -59,7 +67,7 @@
 											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
 										</div>
 										<span class="float-right my-auto mr-auto">
-											<i class="fas fa-arrow-circle-down text-white"></i>
+											<i class="fas fa-arrow-circle-up text-white"></i>
 											<span class="text-white op-7"> -23.09%</span>
 										</span>
 									</div>
@@ -72,7 +80,7 @@
 						<div class="card overflow-hidden sales-card bg-success-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">TOTAL EARNINGS</h6>
+									<h6 class="mb-3 tx-12 text-white">عدد الفاعليات</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -94,7 +102,7 @@
 						<div class="card overflow-hidden sales-card bg-warning-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">PRODUCT SOLD</h6>
+									<h6 class="mb-3 tx-12 text-white"  >عدد الحجوزات  تم قبولها</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -103,7 +111,7 @@
 											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
 										</div>
 										<span class="float-right my-auto mr-auto">
-											<i class="fas fa-arrow-circle-down text-white"></i>
+											<i class="fas fa-arrow-circle-up text-white"></i>
 											<span class="text-white op-7"> -152.3</span>
 										</span>
 									</div>
@@ -114,6 +122,9 @@
 					</div>
 				</div>
 				<!-- row closed -->
+
+
+
 
 				<!-- row opened -->
 				<div class="row row-sm">
@@ -141,10 +152,44 @@
 									  <label><span class="bg-warning"></span>Failed</label>
 									</div>
 								  </div>
+
+
 								<div id="bar" class="sales-bar mt-4"></div>
+
+
+								
 							</div>
 						</div>
 					</div>
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					<div class="col-lg-12 col-xl-5">
 						<div class="card card-dashboard-map-one">
 							<label class="main-content-label">Sales Revenue by Customers in USA</label>
@@ -154,7 +199,46 @@
 							</div>
 						</div>
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				</div>
+
+
+
+
+
 				<!-- row closed -->
 
 				<!-- row opened -->
@@ -251,6 +335,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="col-xl-4 col-md-12 col-lg-6">
 						<div class="card">
 							<div class="card-header pb-1">
@@ -258,29 +343,30 @@
 								<p class="tx-12 mb-0 text-muted">Sales activities are the tactics that salespeople use to achieve their goals and objective</p>
 							</div>
 							<div class="product-timeline card-body pt-2 mt-1">
-								<ul class="timeline-1 mb-0">
+								   <ul class="timeline-1 mb-0">
 									<li class="mt-0"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Total Products</span> <a href="#" class="float-left tx-11 text-muted">3 days ago</a>
-										<p class="mb-0 text-muted tx-12">1.3k New Products</p>
+									<p class="mb-0 text-muted tx-12">1.3k New Products</p>
 									</li>
 									<li class="mt-0"> <i class="mdi mdi-cart-outline bg-danger-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Total Sales</span> <a href="#" class="float-left tx-11 text-muted">35 mins ago</a>
-										<p class="mb-0 text-muted tx-12">1k New Sales</p>
+									<p class="mb-0 text-muted tx-12">1k New Sales</p>
 									</li>
 									<li class="mt-0"> <i class="ti-bar-chart-alt bg-success-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Toatal Revenue</span> <a href="#" class="float-left tx-11 text-muted">50 mins ago</a>
-										<p class="mb-0 text-muted tx-12">23.5K New Revenue</p>
+									<p class="mb-0 text-muted tx-12">23.5K New Revenue</p>
 									</li>
 									<li class="mt-0"> <i class="ti-wallet bg-warning-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Toatal Profit</span> <a href="#" class="float-left tx-11 text-muted">1 hour ago</a>
-										<p class="mb-0 text-muted tx-12">3k New profit</p>
+									<p class="mb-0 text-muted tx-12">3k New profit</p>
 									</li>
 									<li class="mt-0"> <i class="si si-eye bg-purple-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Customer Visits</span> <a href="#" class="float-left tx-11 text-muted">1 day ago</a>
-										<p class="mb-0 text-muted tx-12">15% increased</p>
+									<p class="mb-0 text-muted tx-12">15% increased</p>
 									</li>
 									<li class="mt-0 mb-0"> <i class="icon-note icons bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Customer Reviews</span> <a href="#" class="float-left tx-11 text-muted">1 day ago</a>
-										<p class="mb-0 text-muted tx-12">1.5k reviews</p>
+									<p class="mb-0 text-muted tx-12">1.5k reviews</p>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
+
 					<div class="col-xl-4 col-md-12 col-lg-6">
 						<div class="card">
 							<div class="card-header pb-0">
@@ -339,32 +425,29 @@
 				<div class="row row-sm row-deck">
 					<div class="col-md-12 col-lg-4 col-xl-4">
 						<div class="card card-dashboard-eight pb-2">
-							<h6 class="card-title">Your Top Countries</h6><span class="d-block mg-b-10 text-muted tx-12">Sales performance revenue based by country</span>
+							<h6 class="card-title">المدن في الصفحه الرئيسيه</h6>
 							<div class="list-group">
 								<div class="list-group-item border-top-0">
-									<i class="flag-icon flag-icon-us flag-icon-squared"></i>
-									<p>United States</p><span>$1,671.10</span>
+									<i class="flag-icon flag-icon-ae flag-icon-squared"></i>
+									<p>دبي</p>
 								</div>
 								<div class="list-group-item">
-									<i class="flag-icon flag-icon-nl flag-icon-squared"></i>
-									<p>Netherlands</p><span>$1,064.75</span>
+									<i class="flag-icon flag-icon-ae flag-icon-squared"></i>
+									<p>عجمان</p>
 								</div>
 								<div class="list-group-item">
-									<i class="flag-icon flag-icon-gb flag-icon-squared"></i>
-									<p>United Kingdom</p><span>$1,055.98</span>
+									<i class="flag-icon flag-icon-ae flag-icon-squared"></i>
+									<p>الشارقه</p>
 								</div>
 								<div class="list-group-item">
-									<i class="flag-icon flag-icon-ca flag-icon-squared"></i>
-									<p>Canada</p><span>$1,045.49</span>
+									<i class="flag-icon flag-icon-ae flag-icon-squared"></i>
+									<p>ابوظبي</p>
 								</div>
 								<div class="list-group-item">
-									<i class="flag-icon flag-icon-in flag-icon-squared"></i>
-									<p>India</p><span>$1,930.12</span>
+									<i class="flag-icon flag-icon-ae flag-icon-squared"></i>
+									<p>الرويس</p>
 								</div>
-								<div class="list-group-item border-bottom-0 mb-0">
-									<i class="flag-icon flag-icon-au flag-icon-squared"></i>
-									<p>Australia</p><span>$1,042.00</span>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -421,8 +504,107 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="row row-sm">
+						<div class="col-sm-12 col-md-6">
+							<div class="card overflow-hidden">
+								<div class="card-body">
+									<div class="main-content-label mg-b-5">
+										Stacked Bar Chart
+									</div>
+									<p class="mg-b-20">Basic Charts Of Valex template.</p>
+									<div class="chartjs-wrapper-demo">
+										<canvas id="chartStacked1"></canvas>
+									</div>
+								</div>
+							</div>
+						</div><!-- col-6 -->
+						<div class="col-sm-12 col-md-6">
+							<div class="card overflow-hidden">
+								<div class="card-body">
+									<div class="main-content-label mg-b-5">
+										Stacked Bar Chart
+									</div>
+									<p class="mg-b-20">Basic Charts Of Valex template.</p>
+									<div class="chartjs-wrapper-demo">
+										<canvas id="chartStacked2"></canvas>
+									</div>
+								</div>
+							</div>
+						</div><!-- col-6 -->
+					</div>
+			
 				</div>
-				<!-- /row -->
+			
+				
+
+
+
+
+
+
+
+
+				<div class="row row-sm">
+					<div class="col-lg-6 col-md-12">
+						<div class="card mg-b-20">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Data Attributes
+								</div>
+								<p class="mg-b-20">It is Very Easy to Customize and it uses in website apllication.</p>
+								<div id="echart7"  class="ht-300"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<div class="card mg-b-20">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Data Attributes
+								</div>
+								<p class="mg-b-20">It is Very Easy to Customize and it uses in website apllication.</p>
+								<div id="echart8"  class="ht-300"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+					<!-- row -->
+				<div class="row row-sm">
+					<div class="col-md-6">
+						<div class="card mg-b-20">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Area Chart
+								</div>
+								<p class="mg-b-20">Basic Charts Of Valex template.</p>
+								<div class="ht-200 ht-sm-300" id="flotArea1"></div>
+							</div>
+						</div>
+					</div><!-- col-6 -->
+					<div class="col-md-6 ">
+						<div class="card mg-b-20">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Area Chart
+								</div>
+								<p class="mg-b-20">Basic Charts Of Valex template.</p>
+								<div class="ht-200 ht-sm-300" id="flotArea2"></div>
+							</div>
+						</div>
+					</div><!-- col-6 -->
+				</div>
+
+
+
+
 			</div>
 		</div>
 		<!-- Container closed -->
@@ -433,6 +615,7 @@
 <!-- Moment js -->
 <script src="{{URL::asset('assets/plugins/raphael/raphael.min.js')}}"></script>
 <!--Internal  Flot js-->
+
 <script src="{{URL::asset('assets/plugins/jquery.flot/jquery.flot.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jquery.flot/jquery.flot.pie.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jquery.flot/jquery.flot.resize.js')}}"></script>
@@ -448,4 +631,18 @@
 <!--Internal  index js -->
 <script src="{{URL::asset('assets/js/index.js')}}"></script>
 <script src="{{URL::asset('assets/js/jquery.vmap.sampledata.js')}}"></script>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

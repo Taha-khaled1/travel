@@ -536,7 +536,7 @@ $(function() {
 			ny: '#007bff'
 		},
 		hoverColor: '#222',
-		enableZoom: false,
+		enableZoom: true,
 		borderWidth: 1,
 		borderColor: '#fff',
 		hoverOpacity: .85
