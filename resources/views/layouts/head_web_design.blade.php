@@ -36,12 +36,12 @@
               </li>
               @auth
               <li class="navigation-dropdown-item">
-                <a class="navigation-dropdown-link" href="./account-pages--login.html">تسجيل الخروج</a>
+                <a class="navigation-dropdown-link" href="{{route('logout')}}">تسجيل الخروج</a>
               </li>  
               @endauth
               @guest
               <li class="navigation-dropdown-item">
-                <a class="navigation-dropdown-link" href="./account-pages--login.html">تسجيل الدخول</a>
+                <a class="navigation-dropdown-link" href="{{route('login')}}">تسجيل الدخول</a>
               </li> 
               @endguest
 
