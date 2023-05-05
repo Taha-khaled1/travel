@@ -27,9 +27,9 @@
               <li class="navigation-dropdown-item">
                 <a class="navigation-dropdown-link" href="{{route('profile.edit')}}">الملف الشخصي</a>
               </li>
-              <li class="navigation-dropdown-item">
+              {{-- <li class="navigation-dropdown-item">
                 <a class="navigation-dropdown-link" href="./my-account-pages--order.html">حجوزاتك</a>
-              </li>
+              </li> --}}
             
               <li class="navigation-dropdown-item">
                 <hr class="dropdown-divider rlr-dropdown__divider" />
