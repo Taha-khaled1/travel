@@ -137,7 +137,7 @@
                               <p class="form-row form-row-wide validate-required validate-email" id="billing_email_field" data-priority="110">
                                 <label for="billing_email" class=""> البريد الاكتروني </label>
                                 <span class="woocommerce-input-wrapper">
-                                  <input type="email" class="input-text" name="email" id="billing_email" placeholder="jd@emprise.tours" value="" autocomplete="email" />
+                                  <input type="email" class="input-text" name="email" id="billing_email" placeholder="jd@77trips.tours" value="" autocomplete="email" />
                                 </span>
                               </p>
                            

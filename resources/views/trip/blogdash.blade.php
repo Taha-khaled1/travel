@@ -66,7 +66,7 @@
 					<div class="col-xl-12">
 						<div class="card">
 							<div class="col-sm-6 col-md-4 col-xl-3">
-								<a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة نوع عقار</a>
+								<a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة مقال</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">

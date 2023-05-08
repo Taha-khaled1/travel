@@ -145,7 +145,7 @@
                     <!-- Section heading -->
                     <div class="rlr-section__title">
                         <h2 class="rlr-section__title--main text-end">مغامرات</h2> <span
-                            class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك الوحيد!</span>
+                            class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك الوحيد!</span>
                     </div>
                     <div class="button-row">
 
@@ -203,7 +203,7 @@
                     <!-- Section heading -->
                     <div class="rlr-section__title">
                         <h2 class="rlr-section__title--main text-end">اختار حدث</h2> <span
-                            class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك
+                            class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك
                             الوحيد!</span>
                     </div>
                     <div class="button-row">
@@ -270,7 +270,7 @@
         <!-- Section heading -->
         <div class="rlr-section__title text-end">
             <h2 class="rlr-section__title--main">افضل المدن</h2>
-            <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك الوحيد!</span>
+            <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك الوحيد!</span>
         </div>
         <div class="rlr-masonary-grid__container" dir="rtl">
             <div class="rlr-masonary-grid__one">
@@ -390,7 +390,7 @@
                     <!-- Section heading -->
                     <div class="rlr-section__title">
                         <h2 class="rlr-section__title--main text-end">رحلات</h2>
-                        <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك
+                        <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك
                             الوحيد!</span>
                     </div>
                     <div class="button-row">
@@ -447,7 +447,7 @@
                     <!-- Section heading -->
                     <div class="rlr-section__title">
                         <h2 class="rlr-section__title--main text-end">ايجار مركبات</h2>
-                        <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك
+                        <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك
                             الوحيد!</span>
                     </div>
                     <div class="button-row">
@@ -489,56 +489,39 @@
 
 
 
-
-
-<section class="rlr-section">
-    <div class="container">
-        <!-- Section heading -->
-        <div class="rlr-section__title rlr-section__title--centered">
-            <h2 class="rlr-section__title--main">لا يزال لديك سؤال؟</h2> <span class="rlr-section__title--sub">بعض
-                الأسباب الرائعة يجب أن يكون Emprise متجرك الوحيد!</span>
-        </div>
-        <div class="row">
-            <div class="offset-lg-1 col-lg-5" data-aos="fade-down-right" data-aos-duration="800"
-                data-aos-once="true">
-                <div class="rlr-support-card rlr-support-card--sale">
-                    <div class="rlr-support-card__content">
-                        <div class="rlr-support-card__img-wrapper">
-                            <img src="./assets/svg/headset.svg" alt="headset" />
-                        </div>
-                        <h2 class="rlr-support-card__title">للبيع</h2>
-                        <p class="rlr-support-card__subtitle rlr-support-card__text"> الأسباب الرائعة Emprise يكون
-                            متجرك الوحيد!</p>
-                        <p class="rlr-support-card__text"> NTS@emprise.tours </p>
-                        <p class="rlr-support-card__text"> 00000 000 000 00 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
-                data-aos-duration="1000" data-aos-once="true">
-                <div class="rlr-support-card rlr-support-card--help">
-                    <div class="rlr-support-card__content">
-                        <div class="rlr-support-card__img-wrapper">
-                            <img src="./assets/svg/help-circle.svg" alt="headset" />
-                        </div>
-                        <h2 class="rlr-support-card__title">المساعدة &amp; الدعم</h2>
-                        <p class="rlr-support-card__subtitle rlr-support-card__text"> الأسباب الرائعة Emprise يكون
-                            متجرك الوحيد! </p>
-                        <p class="rlr-support-card__text"> NTS@emprise.tours </p>
-                        <p class="rlr-support-card__text"> 00000 000 000 00 </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
 @endsection
 
 
 
 @section('js')
+<script>$(document).ready(function() {
+    $('.add-to-favorites').on('click', function(event) {
+        event.preventDefault();
+        
+        var productId = $(this).data('product-id');
+        var url = "{{ route('favorites.add', ':id') }}".replace(':id', productId);
 
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {_token: '{{ csrf_token() }}'},
+            success: function(data) {
+                var icon = $('.add-to-favorites[data-product-id="' + productId + '"]').find('.favorite-icon');
+                if (icon.hasClass("fa fa-heart")) {
+                    icon.addClass("pe-7s-like").removeClass("fa fa-heart text-danger");
+
+                    flashBox('success', '{{ __('Removed from favorite') }}');
+                } else {
+                    icon.addClass("fa fa-heart text-danger").removeClass("pe-7s-like");
+
+                    flashBox('success', '{{ __('Added to favorite') }}');
+                }
+            },
+            error: function(xhr, status, error) {
+                alert('An error occurred while adding to favorites');
+            }
+        });
+    });
+});
+</script>
 @endsection

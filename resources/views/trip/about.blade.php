@@ -47,7 +47,7 @@
             <!-- Section heading -->
             <div class="rlr-section__title">
               <h2 class="rlr-section__title--main">رؤيتنا</h2>
-              <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك الوحيد!</span>
+              <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك الوحيد!</span>
             </div>
             <div class="row gy-5">
               <div class="col-xl-6" data-aos="fade-up" data-aos-offset="250" data-aos-duration="500">
@@ -101,7 +101,7 @@
             <!-- Section heading -->
             <div class="rlr-section__title">
               <h2 class="rlr-section__title--main">رؤيتنا</h2>
-              <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك الوحيد!</span>
+              <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك الوحيد!</span>
             </div>
             <div class="row gy-5">
               <div class="col-xl-6" data-aos="fade-up" data-aos-offset="250" data-aos-duration="500">

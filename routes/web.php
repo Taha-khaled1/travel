@@ -73,6 +73,12 @@ Route::post('mass',function (Request $request)
 
 
 
+Route::get('/favorites/index',[App\Http\Controllers\FavoriteController::class, 'index'])->name('favorites.index')->middleware('auth');
+
+Route::post('/favorites/add/{id}',[App\Http\Controllers\FavoriteController::class, 'addFavorite'])->name('favorites.add')->middleware('auth');
+
+Route::post('/favorites/remove/{id}',[App\Http\Controllers\FavoriteController::class, 'removeFavorite'] )->name('favorites.remove')->middleware('auth');
+
 Route::controller(WebController::class)->group(function () {
     Route::get('/', 'index'); 
     Route::get('home', 'index')->name('home');

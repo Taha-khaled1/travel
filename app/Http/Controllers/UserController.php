@@ -28,7 +28,10 @@ class UserController extends Controller
     {
         //
     }
-
+    public function favorites()
+{
+    return $this->hasMany(Favorite::class);
+}
     /**
      * Store a newly created resource in storage.
      *

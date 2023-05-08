@@ -67,7 +67,7 @@
                   <span class="rlr-contact-detail-item__icon"> <i class="rlr-icon-font flaticon-email"> </i> </span>
                   <div>
                     <p class="rlr-contact-detail-item__title">بريد إلكتروني</p>
-                    <h6 class="rlr-contact-detail-item__desc">support@emprise.tours</h6>
+                    <h6 class="rlr-contact-detail-item__desc">support@77trips.tours</h6>
                   </div>
                 </div>
                 <div class="rlr-contact-detail-item">

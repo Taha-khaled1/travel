@@ -41,12 +41,11 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">$5,74.12</h4>
-											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{$unbook}}</h4>
+											{{-- <p class="mb-0 tx-12 text-white op-7">Compared to last week</p> --}}
 										</div>
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
-											<span class="text-white op-7"> +427</span>
 										</span>
 									</div>
 								</div>
@@ -63,12 +62,11 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">$1,230.17</h4>
-											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{$totalUsers}}</h4>
+											{{-- <p class="mb-0 tx-12 text-white op-7">Compared to last week</p> --}}
 										</div>
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
-											<span class="text-white op-7"> -23.09%</span>
 										</span>
 									</div>
 								</div>
@@ -85,12 +83,10 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">$7,125.70</h4>
-											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{$book}}</h4>
 										</div>
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
-											<span class="text-white op-7"> 52.09%</span>
 										</span>
 									</div>
 								</div>
@@ -107,12 +103,10 @@
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">$4,820.50</h4>
-											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{$isbook}}</h4>
 										</div>
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
-											<span class="text-white op-7"> -152.3</span>
 										</span>
 									</div>
 								</div>
@@ -126,7 +120,7 @@
 
 
 
-				<!-- row opened -->
+				{{-- <!-- row opened -->
 				<div class="row row-sm">
 					<div class="col-md-12 col-lg-12 col-xl-7">
 						<div class="card">
@@ -199,7 +193,7 @@
 							</div>
 						</div>
 					</div>
-
+ --}}
 
 
 
@@ -242,7 +236,7 @@
 				<!-- row closed -->
 
 				<!-- row opened -->
-				<div class="row row-sm">
+				{{-- <div class="row row-sm">
 					<div class="col-xl-4 col-md-12 col-lg-12">
 						<div class="card">
 							<div class="card-header pb-1">
@@ -419,10 +413,10 @@
 						</div>
 					</div>
 				</div>
-				<!-- row close -->
+				<!-- row close --> --}}
 
 				<!-- row opened -->
-				<div class="row row-sm row-deck">
+				{{-- <div class="row row-sm row-deck">
 					<div class="col-md-12 col-lg-4 col-xl-4">
 						<div class="card card-dashboard-eight pb-2">
 							<h6 class="card-title">المدن في الصفحه الرئيسيه</h6>
@@ -450,8 +444,8 @@
 								
 							</div>
 						</div>
-					</div>
-					<div class="col-md-12 col-lg-8 col-xl-8">
+					</div> --}}
+					{{-- <div class="col-md-12 col-lg-8 col-xl-8">
 						<div class="card card-table-two">
 							<div class="d-flex justify-content-between">
 								<h4 class="card-title mb-1">Your Most Recent Earnings</h4>
@@ -600,7 +594,7 @@
 							</div>
 						</div>
 					</div><!-- col-6 -->
-				</div>
+				</div> --}}
 
 
 

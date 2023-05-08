@@ -432,7 +432,7 @@
           <!-- Section heading -->
           <div class="rlr-section__title">
             <h2 class="rlr-section__title--main">Similar Product</h2>
-            <span class="rlr-section__title--sub">Sost Brilliant reasons Emprise should be your one-stop-shop!</span>
+            <span class="rlr-section__title--sub">Sost Brilliant reasons 77trips should be your one-stop-shop!</span>
           </div>
           <div class="button-row">
             <a href="./search-results--left-sidebar.html" class="btn rlr-button rlr-button--large rlr-button--rounded rlr-button--brand"> Check All </a>

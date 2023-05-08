@@ -44,7 +44,11 @@
                 <a class="navigation-dropdown-link" href="{{route('login')}}">تسجيل الدخول</a>
               </li> 
               @endguest
-
+              @guest
+              <li class="navigation-dropdown-item">
+                <a class="navigation-dropdown-link" href="{{route('register')}}">انشاء حساب</a>
+              </li> 
+              @endguest
             </ul>
           </li>
 

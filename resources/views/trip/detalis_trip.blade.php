@@ -476,7 +476,7 @@
           <!-- Section heading -->
           <div class="rlr-section__title">
             <h2 class="rlr-section__title--main">منتج مماثل</h2>
-            <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون Emprise متجرك الوحيد!</span>
+            <span class="rlr-section__title--sub">بعض الأسباب الرائعة يجب أن يكون 77trips متجرك الوحيد!</span>
           </div>
           <div class="button-row">
             <a href="./search-results--left-sidebar.html" class="btn rlr-button rlr-button--large rlr-button--rounded rlr-button--brand"> تحقق من الكل </a>
