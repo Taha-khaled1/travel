@@ -3,7 +3,7 @@
         <div class="rlr-footer__getintouch">
             <div class="rlr-footer__getintouch_col rlr-footer__getintouch__col--address p-0 text-end">
                 <h4>مكاتبنا</h4>
-                <a >الامارات العربيه المتحده</a>
+                <a >{{$company_data->company_address}}</a>
             </div>
             <div class="rlr-footer__getintouch_col rlr-footer__getintouch__col--title text-end">
                 <h4>احصل على السفر</h4>
@@ -64,11 +64,11 @@
                 </div>
                 <!-- Footer social links -->
                 <div class="rlr-footer__legal__row__col">
-                    <a href="#">لينكدان</a>
+                    <a href="{{$company_data->linkedin}}">لينكدان</a>
                     <span class="separate">/</span>
-                    <a href="#">فيسبوك</a>
+                    <a href="{{$company_data->facebook}}">فيسبوك</a>
                     <span class="separate">/</span>
-                    <a href="#">انستجرام</a>
+                    <a href="{{$company_data->google}}">انستجرام</a>
                 </div>
             </div>
             <!-- Footer copyright -->

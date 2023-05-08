@@ -55,9 +55,22 @@ class SettingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Setting $setting)
+    public function update(Request $request)
     {
-        return $request;
+    $setting= Setting::first();
+    $setting->company_name =$request->username;
+    $setting->email =$request->email;
+    $setting->website_link =$request->Website;
+    $setting->company_phone =$request->phone;
+    $setting->company_address =$request->address;
+    $setting->twitter =$request->twitter;
+    $setting->facebook =$request->facebook;
+    $setting->google =$request->google;
+    $setting->linkedin =$request->linkedin;
+    $setting->github =$request->github;
+    $setting->biographical_information = $request->aboutcompany;
+    $setting->save();
+   return back();
     }
 
     /**
