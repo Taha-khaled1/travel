@@ -36,11 +36,31 @@
               </li>
               @auth
               <li class="navigation-dropdown-item">
-                <a class="navigation-dropdown-link" href="{{route('logout')}}">تسجيل الخروج</a>
+                {{-- <a class="navigation-dropdown-link" href="{{route('logout')}}">تسجيل الخروج</a> --}}
+
+                <a class="navigation-dropdown-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                class="bx bx-log-out"></i>تسجيل خروج</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>
+
+
+
+
+
+
+
+
+
               </li>  
               @endauth
               @guest
               <li class="navigation-dropdown-item">
+
+            
+
+
                 <a class="navigation-dropdown-link" href="{{route('login')}}">تسجيل الدخول</a>
               </li> 
               @endguest

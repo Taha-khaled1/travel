@@ -78,7 +78,12 @@ Route::get('/favorites/index',[App\Http\Controllers\FavoriteController::class, '
 Route::post('/favorites/add/{id}',[App\Http\Controllers\FavoriteController::class, 'addFavorite'])->name('favorites.add')->middleware('auth');
 
 Route::post('/favorites/remove/{id}',[App\Http\Controllers\FavoriteController::class, 'removeFavorite'] )->name('favorites.remove')->middleware('auth');
-
+Route::get('/blogview',  [BlogController::class,'index'])->name('blogview');    Route::get('/blogs/{id}', [BlogController::class,'show'])->name('showblog');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 Route::controller(WebController::class)->group(function () {
     Route::get('/', 'index'); 
     Route::get('home', 'index')->name('home');
@@ -91,6 +96,7 @@ Route::controller(WebController::class)->group(function () {
     Route::get('/detalisTrip{id}', 'detalisTrip')->name('detalis.Trip');
     // Route::post('/register', 'register');
 });
+Route::middleware(['admin'])->group(function () {
 Route::controller(BookController::class)->group(function () {
     Route::post('/book.store', 'store')->name('book.store');
     Route::get('/booksroute', 'index');
@@ -105,11 +111,7 @@ Route::controller(DashboardController::class)->group(function () {
     // Route::post('/register', 'register');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+
 
 Route::controller(SettingController::class)->group(function () {
     Route::get('/setting', 'index')->name('setting');
@@ -145,15 +147,15 @@ Route::controller(EventController::class)->group(function () {
  });
 
  Route::controller(BlogController::class)->group(function () {
-    Route::get('/blogview',  'index')->name('blogview');
     Route::get('/blogscreate',  'create')->name('blogscreate');
     Route::post('/blogs.store', 'store')->name('blogs.store');
     Route::get('/blogs/{id}/edit',  'edit')->name('blogs.edit');
     Route::post('/blogs.update', 'update')->name('blogs.update');
     Route::post('/blogs.destroy', 'destroy')->name('blogs.destroy');
-    Route::get('/blogs/{id}', 'show')->name('showblog');
+
 
     });
     
 Route::get('/{page}', [AdminController::class,'index']);
 
+});

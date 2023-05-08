@@ -3,7 +3,7 @@
         <div class="rlr-footer__getintouch">
             <div class="rlr-footer__getintouch_col rlr-footer__getintouch__col--address p-0 text-end">
                 <h4>مكاتبنا</h4>
-                <a href="#">الامارات العربيه المتحده</a>
+                <a >الامارات العربيه المتحده</a>
             </div>
             <div class="rlr-footer__getintouch_col rlr-footer__getintouch__col--title text-end">
                 <h4>احصل على السفر</h4>
@@ -26,33 +26,33 @@
                 <h4>خدمات</h4>
                 <ul>
                     
-                    <li><a href="#">المسؤاليه الكامله</a></li>
-                    <li><a href="#">رحله امنه</a></li>
-                    <li><a href="#">رحله كامله</a></li>
-                    <li><a href="#">اكتشف المراكب</a></li>
-                    <li><a href="#">اكتشف المغامرات</a></li>
+                    <li><a >المسؤاليه الكامله</a></li>
+                    <li><a >رحله امنه</a></li>
+                    <li><a >رحله كامله</a></li>
+                    <li><a >اكتشف المراكب</a></li>
+                    <li><a >اكتشف المغامرات</a></li>
                 </ul>
             </nav>
-            <nav class="rlr-footer__menu__col text-end">
+            {{-- <nav class="rlr-footer__menu__col text-end">
                 <!-- Footer menu col -->
                 <h4>مغامرات</h4>
                 <ul>
-                    <li><a href="#">Beach Activity</a></li>
-                    <li><a href="#">Bungee Jump</a></li>
-                    <li><a href="#">City Tour</a></li>
-                    <li><a href="#">Hiking Trips</a></li>
-                    <li><a href="#">Jungle Safari</a></li>
+                    <li><a >Beach Activity</a></li>
+                    <li><a >Bungee Jump</a></li>
+                    <li><a >City Tour</a></li>
+                    <li><a >Hiking Trips</a></li>
+                    <li><a >Jungle Safari</a></li>
                 </ul>
-            </nav>
+            </nav> --}}
             <nav class="rlr-footer__menu__col text-end">
                 <!-- Footer menu col -->
                 <h4>المدن</h4>
                 <ul>
-                    <li><a href="#">دبي</a></li>
-                    <li><a href="#">ابوظبي</a></li>
-                    <li><a href="#">الشارقه</a></li>
-                    <li><a href="#">الرويس</a></li>
-                    <li><a href="#">عجمان</a></li>
+                    <li><a >دبي</a></li>
+                    <li><a >ابوظبي</a></li>
+                    <li><a >الشارقه</a></li>
+                    <li><a >الرويس</a></li>
+                    <li><a >عجمان</a></li>
                 </ul>
             </nav>
             <!-- Subscribe -->
