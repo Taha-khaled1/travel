@@ -38,7 +38,7 @@
                         <div class="row justify-content-md-center">
                             <div class="col-xxl-10">
                                 <!-- Search banner -->
-                                <form class="rlr-banner-search rlr-banner-search--rounded">
+                                <form class="rlr-banner-search rlr-banner-search--rounded" action="{{ route('alltrip') }}">
                                     <div class="rlr-banner-search__input-wrapper">
                                         <!-- Destination -->
                                         <div
@@ -99,6 +99,7 @@
 
                                         </i> </button>
                                 </form>
+
                             </div>
                         </div>
                        
