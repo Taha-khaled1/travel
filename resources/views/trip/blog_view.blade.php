@@ -59,7 +59,7 @@
   
   </style>
 @section('title')
-    empty
+    المدونه
 @stop
 @endsection
 
