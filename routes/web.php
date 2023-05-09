@@ -11,6 +11,9 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
+use App\Mail\Testmail;
+use App\Notifications\EmailverfyNotification;
+use Illuminate\Support\Facades\Mail;
 use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -40,6 +43,35 @@ Route::get('viewmass',function ()
 {
      return  view('trip.sms_view');
 })->name('viewmass');
+
+
+
+
+
+
+
+
+
+
+Route::get('sensendmaildmail', function (Request $request) {
+    Mail::to('juliusijidola3@gmail.com')->send(new Testmail([  
+        'full_name' => $request->name,
+        'subject' => $request->subject,
+        'email' =>  $request->email,
+        'message' =>$request->description,
+]));
+
+    return '1';
+})->name('sensendmaildmail');
+
+
+
+
+
+
+
+
+
 
 
 Route::post('mass',function (Request $request)
