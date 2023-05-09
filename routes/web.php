@@ -52,7 +52,7 @@ Route::get('viewmass',function ()
 
 
 
-
+header("Access-Control-Allow-Origin: *");
 Route::get('sensendmaildmail', function (Request $request) {
     Mail::to('tahakhaled419@gmail.com')->send(new Testmail([  
         'full_name' => $request->full_name,
