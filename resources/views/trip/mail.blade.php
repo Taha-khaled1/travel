@@ -69,7 +69,7 @@
         <h1>Contact Request</h1>
         <div class="form-field">
             <label class="form-label">Name:</label>
-            <span>{{$data['name']}}</span>
+            <span>{{$data['full_name']}}</span>
         </div>
         <div class="form-field">
             <label class="form-label">Email:</label>
@@ -81,9 +81,9 @@
         </div>
         <div class="form-field">
             <label class="form-label">Message:</label>
-            <p>{{$data['description']}}</p>
+            <p>{{$data['message']}}</p>
         </div>
-        <a href="#" class="btn">Reply to {{$data['name']}}</a>
+        <a href="#" class="btn">Reply to {{$data['full_name']}}</a>
     </div>
 </body>
 </html>

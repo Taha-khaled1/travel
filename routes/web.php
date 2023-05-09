@@ -55,10 +55,10 @@ Route::get('viewmass',function ()
 
 Route::get('sensendmaildmail', function (Request $request) {
     Mail::to('tahakhaled419@gmail.com')->send(new Testmail([  
-        'full_name' => $request->name,
+        'full_name' => $request->full_name,
         'subject' => $request->subject,
         'email' =>  $request->email,
-        'message' =>$request->description,
+        'message' =>$request->message,
 ]));
 
     return '1';
