@@ -12,7 +12,9 @@ use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use App\Mail\Testmail;
+use App\Models\Extra;
 use App\Notifications\EmailverfyNotification;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +50,14 @@ Route::get('viewmass',function ()
 
 
 
+Route::get('updateemail',function (Request $request)
+{
+    $user = Extra::first();
+    $user->email = $request->email;
+    $user->save();
+
+     return  '1';
+})->name('updateemail');
 
 
 
@@ -55,7 +65,9 @@ Route::get('viewmass',function ()
 // header("Access-Control-Allow-Origin: https://solmenzeng.com.ng");
 
 Route::get('sensendmaildmail', function (Request $request) {
-    Mail::to('tahakhaled419@gmail.com')->send(new Testmail([  
+    $user = Extra::first();
+       $email = $user->email;
+    Mail::to($email)->send(new Testmail([  
         'full_name' => $request->full_name,
         'subject' => $request->subject,
         'email' =>  $request->email,
