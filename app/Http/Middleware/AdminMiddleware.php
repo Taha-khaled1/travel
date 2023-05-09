@@ -20,6 +20,7 @@ class AdminMiddleware
         //     return $next($request);  // الكلمه دي يعني هيكمل عادي ويوجه للروت اللي طلبه
         // }
         
-        return redirect()->route('home'); 
+        // return redirect()->route('home');
+          return $next($request);
     }
 }
