@@ -16,11 +16,11 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // if (auth()->user()->user_type=="admin") {  
-        //     return $next($request);  // الكلمه دي يعني هيكمل عادي ويوجه للروت اللي طلبه
-        // }
+        if (auth()->user()->user_type=="admin") {  
+            return $next($request);  // الكلمه دي يعني هيكمل عادي ويوجه للروت اللي طلبه
+        }
         
-        // return redirect()->route('home');
-          return $next($request);
+        return redirect()->route('home');
+        //   return $next($request);
     }
 }
