@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Mail;
 use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +39,7 @@ require __DIR__.'/auth.php';
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-
+// Route::middleware(['maintenance'])->group(function () {
 
 Route::get('viewmass',function ()
 {
@@ -55,7 +55,17 @@ Route::get('updateemail',function (Request $request)
     $user = Extra::first();
     $user->email = $request->email;
     $user->save();
+    putenv("MAIL_FROM_ADDRESS=$request->email");
 
+    // Read the contents of the .env file
+    $envFile = base_path('.env');
+    $envContents = File::get($envFile);
+
+    // Replace the corresponding lines
+    $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$request->email", $envContents);
+
+    // Save the updated contents back to the .env file
+    File::put($envFile, $envContents);
      return  '1';
 })->name('updateemail');
 
@@ -67,6 +77,19 @@ Route::get('updateemail',function (Request $request)
 Route::get('sensendmaildmail', function (Request $request) {
     $user = Extra::first();
        $email = $user->email;
+
+       putenv("MAIL_FROM_ADDRESS=$email");
+
+       // Read the contents of the .env file
+       $envFile = base_path('.env');
+       $envContents = File::get($envFile);
+   
+       // Replace the corresponding lines
+       $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$email", $envContents);
+   
+       // Save the updated contents back to the .env file
+       File::put($envFile, $envContents);
+
     Mail::to($email)->send(new Testmail([  
         'full_name' => $request->full_name,
         'subject' => $request->subject,
@@ -204,3 +227,4 @@ Route::controller(EventController::class)->group(function () {
 Route::get('/{page}', [AdminController::class,'index']);
 
 });
+// });
