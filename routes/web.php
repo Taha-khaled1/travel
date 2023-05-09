@@ -128,7 +128,7 @@ Route::controller(WebController::class)->group(function () {
     Route::get('/detalisTrip{id}', 'detalisTrip')->name('detalis.Trip');
     // Route::post('/register', 'register');
 });
-Route::middleware(['admin'])->group(function () {
+// Route::middleware(['admin'])->group(function () {
 Route::controller(BookController::class)->group(function () {
     Route::post('/book.store', 'store')->name('book.store');
     Route::get('/booksroute', 'index');
@@ -190,4 +190,4 @@ Route::controller(EventController::class)->group(function () {
     
 Route::get('/{page}', [AdminController::class,'index']);
 
-});
+// });
