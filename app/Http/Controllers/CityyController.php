@@ -12,7 +12,7 @@ class CityyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         //
     }
@@ -20,7 +20,7 @@ class CityyController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -28,7 +28,7 @@ class CityyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class CityyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cityy $cityy): Response
+    public function show(Cityy $cityy)
     {
         //
     }
@@ -44,7 +44,7 @@ class CityyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cityy $cityy): Response
+    public function edit(Cityy $cityy)
     {
         //
     }
@@ -52,7 +52,7 @@ class CityyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cityy $cityy): RedirectResponse
+    public function update(Request $request, Cityy $cityy)
     {
         //
     }
@@ -60,7 +60,7 @@ class CityyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cityy $cityy): RedirectResponse
+    public function destroy(Cityy $cityy)
     {
         //
     }

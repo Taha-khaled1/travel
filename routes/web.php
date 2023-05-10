@@ -4,6 +4,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use App\Mail\Testmail;
+use App\Models\Country;
 use App\Models\Extra;
 use App\Notifications\EmailverfyNotification;
 use Illuminate\Support\Facades\DB;
@@ -79,14 +81,14 @@ Route::get('sensendmaildmail', function (Request $request) {
        $email = $user->email;
 
        putenv("MAIL_FROM_ADDRESS=$email");
-
+       putenv("MAIL_FROM_NAME=$request->email");
        // Read the contents of the .env file
        $envFile = base_path('.env');
        $envContents = File::get($envFile);
    
        // Replace the corresponding lines
        $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$email", $envContents);
-   
+       $envContents = preg_replace('/^MAIL_FROM_NAME=.*$/m', "MAIL_FROM_NAME=$request->email", $envContents);
        // Save the updated contents back to the .env file
        File::put($envFile, $envContents);
 
@@ -164,7 +166,7 @@ Route::controller(WebController::class)->group(function () {
     Route::get('/detalisTrip{id}', 'detalisTrip')->name('detalis.Trip');
     // Route::post('/register', 'register');
 });
- Route::middleware(['admin'])->group(function () {
+ Route::middleware(['auth','admin'])->group(function () {
 Route::controller(BookController::class)->group(function () {
     Route::post('/book.store', 'store')->name('book.store');
     Route::get('/booksroute', 'index');
@@ -213,6 +215,22 @@ Route::controller(EventController::class)->group(function () {
      Route::post('/catogeryupdate', 'update')->name('catogery.update');
      Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy');
  });
+ Route::controller(CountryController::class)->group(function () {
+    // Route::get('/catogery', 'index')->name('catogery');
+     Route::get('/countryview', 'index')->name('countryview');
+     Route::post('/catogerystore', 'store')->name('catogery.store');
+     Route::post('/catogeryupdate', 'update')->name('catogery.update');
+     Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy');
+ });
+
+//  Route::controller(CountryController::class)->group(function () {
+//     // Route::get('/catogery', 'index')->name('catogery');
+//      Route::get('/countryview', 'index')->name('countryview');
+//      Route::post('/catogerystore', 'store')->name('catogery.store');
+//      Route::post('/catogeryupdate', 'update')->name('catogery.update');
+//      Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy');
+//  });
+
 
  Route::controller(BlogController::class)->group(function () {
     Route::get('/blogscreate',  'create')->name('blogscreate');
