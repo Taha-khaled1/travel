@@ -66,7 +66,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Contact Request</h1>
+        <h1>you have received a message</h1>
         <div class="form-field">
             <label class="form-label">Name:</label>
             <span>{{$data['full_name']}}</span>
