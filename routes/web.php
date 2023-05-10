@@ -4,6 +4,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
@@ -218,18 +219,18 @@ Route::controller(EventController::class)->group(function () {
  Route::controller(CountryController::class)->group(function () {
     // Route::get('/catogery', 'index')->name('catogery');
      Route::get('/countryview', 'index')->name('countryview');
-     Route::post('/catogerystore', 'store')->name('catogery.store');
-     Route::post('/catogeryupdate', 'update')->name('catogery.update');
-     Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy');
+     Route::post('/countrystore', 'store')->name('country.store');
+     Route::post('/countryupdate', 'update')->name('country.update');
+     Route::post('/countrydestroy', 'destroy')->name('country.destroy');
  });
 
-//  Route::controller(CountryController::class)->group(function () {
-//     // Route::get('/catogery', 'index')->name('catogery');
-//      Route::get('/countryview', 'index')->name('countryview');
-//      Route::post('/catogerystore', 'store')->name('catogery.store');
-//      Route::post('/catogeryupdate', 'update')->name('catogery.update');
-//      Route::post('/catogerydestroy', 'destroy')->name('catogery.destroy');
-//  });
+ Route::controller(CityController::class)->group(function () {
+    // Route::get('/catogery', 'index')->name('catogery'); 
+     Route::get('/cityview', 'index')->name('cityview');
+     Route::post('/citystore', 'store')->name('city.store');
+     Route::post('/cityupdate', 'update')->name('city.update');
+     Route::post('/citydestroy', 'destroy')->name('city.destroy');
+ });
 
 
  Route::controller(BlogController::class)->group(function () {

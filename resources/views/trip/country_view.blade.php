@@ -136,41 +136,13 @@
 										type="button"><span aria-hidden="true">&times;</span></button>
 								</div>
 								<div class="modal-body">
-									<form action="{{ route('catogery.store') }}" method="post" enctype="multipart/form-data">
+									<form action="{{ route('country.store') }}" method="post" enctype="multipart/form-data">
 										{{ csrf_field() }}
 				
-{{-- 										
-                                        <div class="mb-4">
-                                            <label for="country_id" class="form-label">Choose a country:</label>
-                                            {!! country()->dropdown('country', null, ['class' => 'form-control']) !!}
-
-                                        </div> --}}
-
                                         <div class="form-group">
-                                            <label for="country">Country:</label>
-                                            <select id="country" name="country" class="form-control select2" data-placeholder="Select a country">
-                                                <option></option>
-                                                @foreach ($countries as $code => $name)
-                                                    <option value="{{ $code }}">{{ $name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="city">City:</label>
-                                            <select id="city" name="city" class="form-control select2" data-placeholder="Select a city">
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                        
-										{{-- <div class="form-group">
-											<label for="image">تحميل صوره لنوع العقار</label>
-											<div class="custom-file">
-												<input type="file" class="custom-file-input" id="image" name="image">
-												<label class="custom-file-label" for="image">اختار صوره</label>
-											</div>
-											<img src="#" id="preview" style="display: none; max-width: 200px; max-height: 200px;">
-										</div> --}}
+											<label for="exampleInputEmail1">اسم الدوله</label>
+											<input type="text" class="form-control" id="name" name="name">
+										</div>
 				
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-success">تاكيد</button>
@@ -193,7 +165,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{ route("catogery.update") }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route("country.update") }}" method="post" enctype="multipart/form-data">
 			
 			{{ csrf_field() }}
 			<input type="hidden" name="id" id="id" value="">
@@ -201,11 +173,7 @@
 				<label for="recipient-name" class="col-form-label">اسم الدوله</label>
 				<input class="form-control" name="name" id="name" type="text">
 			</div>
-			<div class="form-group">
-				<label for="recipient-name" class="col-form-label">صوره الدوله</label>
-				<input class="form-control" name="image" id="image" type="file">
-				<img src="image"  id="image" class="img-thumbnail" style="width: 100px; height: 100px;">
-			</div>
+			
 			</div>
 			<div class="modal-footer">
 			<button type="submit" class="btn btn-primary">تاكيد</button>
@@ -224,7 +192,7 @@
 							<h6 class="modal-title">حذف الدوله</h6><button aria-label="Close" class="close" data-dismiss="modal"
 								type="button"><span aria-hidden="true">&times;</span></button>
 						</div>
-						<form action="{{ route("catogery.destroy") }}"method="post">
+						<form action="{{ route("country.destroy") }}"method="post">
 							{{ method_field('post') }}
 							{{ csrf_field() }}
 							<div class="modal-body">
@@ -340,11 +308,9 @@
 		var button = $(event.relatedTarget) 
 		var id = button.data('id')
 		var name = button.data('name')
-		var image = button.data('image')
 		var modal = $(this)
 		modal.find('.modal-body #id').val(id)
 		modal.find('.modal-body #name').val(name)
-		modal.find('.modal-body #image').attr('src', image)
 	  })
 	});
   </script>

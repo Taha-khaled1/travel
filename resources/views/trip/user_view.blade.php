@@ -224,7 +224,7 @@
 
 
                             <div class="mb-4">
-                                <p class="mg-b-10">القسم</p>
+                                <p class="mg-b-10">الصلاحيه</p>
                                 <select id="user_type" name="user_type" class="form-control SlectBox" onclick="console.log($(this).val())" onchange="console.log('change is firing')">
                                     <option title="Volvo is a car"  value="admin">مسؤال</option>
 

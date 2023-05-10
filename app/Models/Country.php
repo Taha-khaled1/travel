@@ -9,7 +9,11 @@ class Country extends Model
 {
     use HasFactory;
     public $table='countries';
-    public function cities()
+    protected $fillable = [
+        'name',
+        // add other fillable attributes here
+    ];
+        public function cities()
 {
     return $this->hasMany(City::class,'country_id');
 }

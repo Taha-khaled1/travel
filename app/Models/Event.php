@@ -13,6 +13,7 @@ class Event extends Model
         'image',
         
     ];
+    public $table='countries';
     public function features()
     {
         return $this->hasMany(Trip::class,'event_id');

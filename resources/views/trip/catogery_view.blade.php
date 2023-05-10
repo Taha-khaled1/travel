@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('css')
+@section('title')
+
+الاقسام
+@stop
 <!-- Internal Data table css -->
 <link href="{{URL::asset('assets/plugins/datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
 <link href="{{URL::asset('assets/plugins/datatable/css/buttons.bootstrap4.min.css')}}" rel="stylesheet">
@@ -14,7 +18,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">الاقسام /</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">نوع العقار</span>
+							<h4 class="content-title mb-0 my-auto">الاقسام /</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">نوع الرحله</span>
 						</div>
 					</div>
 			
@@ -73,8 +77,8 @@
 									<table class="table text-md-nowrap" id="example1">
 										<thead>
 											<tr>
-												<th class="wd-15p border-bottom-0">رقم العقار</th>
-												<th class="wd-15p border-bottom-0">نوع العقار</th>
+												<th class="wd-15p border-bottom-0">رقم الرحله</th>
+												<th class="wd-15p border-bottom-0">نوع الرحله</th>
 												<th class="wd-15p border-bottom-0">تم انشائه بواسطة</th>
 												<th class="wd-20p border-bottom-0">تاريخ الانشاء</th>
 												<th class="wd-20p border-bottom-0">العمليات</th>
@@ -141,7 +145,7 @@
 										</div>
 				
 										<div class="form-group">
-											<label for="image">تحميل صوره لنوع العقار</label>
+											<label for="image">تحميل صوره لنوع الرحله</label>
 											<div class="custom-file">
 												<input type="file" class="custom-file-input" id="image" name="image">
 												<label class="custom-file-label" for="image">اختار صوره</label>
