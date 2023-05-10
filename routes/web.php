@@ -81,14 +81,14 @@ Route::get('sensendmaildmail', function (Request $request) {
        $email = $user->email;
 
        putenv("MAIL_FROM_ADDRESS=$email");
-       putenv("MAIL_FROM_NAME=$request->email");
+    //    putenv("MAIL_FROM_NAME=$request->email");
        // Read the contents of the .env file
        $envFile = base_path('.env');
        $envContents = File::get($envFile);
    
        // Replace the corresponding lines
        $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$email", $envContents);
-       $envContents = preg_replace('/^MAIL_FROM_NAME=.*$/m', "MAIL_FROM_NAME=$request->email", $envContents);
+    //    $envContents = preg_replace('/^MAIL_FROM_NAME=.*$/m', "MAIL_FROM_NAME=$request->email", $envContents);
        // Save the updated contents back to the .env file
        File::put($envFile, $envContents);
 
