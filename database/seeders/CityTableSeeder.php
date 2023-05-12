@@ -45,7 +45,14 @@ class CityTableSeeder extends Seeder
            'country_id' => 1,
            'created_at' => now(),
            'updated_at' => now()
-       ]);             
+       ]);  
+       City::create([
+        'name' => 'عجمان',
+        
+        'country_id' => 1,
+        'created_at' => now(),
+        'updated_at' => now()
+    ]);           
        City::create([
            'name' => 'الرويس',
            'country_id' => 1,
