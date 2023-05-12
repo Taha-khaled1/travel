@@ -23,7 +23,10 @@ class DatabaseSeeder extends Seeder
             CatogerysTableSeeder::class,
             SettingsTableSeeder::class, 
             TripTableSeeder::class,
-             BlogsTableSeeder::class,
+            BlogsTableSeeder::class,
+            CountryTableSeeder::class,
+            CityTableSeeder::class,
+            
         ]);
     }
 }
