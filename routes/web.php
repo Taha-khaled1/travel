@@ -44,66 +44,64 @@ require __DIR__.'/auth.php';
 
 // Route::middleware(['maintenance'])->group(function () {
 
-Route::get('viewmass',function ()
-{
-     return  view('trip.sms_view');
-})->name('viewmass');
+// Route::get('viewmass',function ()
+// {
+//      return  view('trip.sms_view');
+// })->name('viewmass');
 
 
 
 
 
-Route::get('updateemail',function (Request $request)
-{
-    $user = Extra::first();
-    $user->email = $request->email;
-    $user->save();
-    putenv("MAIL_FROM_ADDRESS=$request->email");
+// Route::get('updateemail',function (Request $request)
+// {
+//     $user = Extra::first();
+//     $user->email = $request->email;
+//     $user->save();
+//     putenv("MAIL_FROM_ADDRESS=$request->email");
 
-    // Read the contents of the .env file
-    $envFile = base_path('.env');
-    $envContents = File::get($envFile);
+//     // Read the contents of the .env file
+//     $envFile = base_path('.env');
+//     $envContents = File::get($envFile);
 
-    // Replace the corresponding lines
-    $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$request->email", $envContents);
+//     // Replace the corresponding lines
+//     $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$request->email", $envContents);
 
-    // Save the updated contents back to the .env file
-    File::put($envFile, $envContents);
-     return  '1';
-})->name('updateemail');
+//     // Save the updated contents back to the .env file
+//     File::put($envFile, $envContents);
+//      return  '1';
+// })->name('updateemail');
 
 
 
 
 // header("Access-Control-Allow-Origin: https://solmenzeng.com.ng");
 
-Route::get('sensendmaildmail', function (Request $request) {
-    $user = Extra::first();
-       $email = $user->email;
+// Route::get('sensendmaildmail', function (Request $request) {
+//     $user = Extra::first();
+//        $email = $user->email;
 
-       putenv("MAIL_FROM_ADDRESS=$email");
-    //    putenv("MAIL_FROM_NAME=$request->email");
-       // Read the contents of the .env file
-       $envFile = base_path('.env');
-       $envContents = File::get($envFile);
+//        putenv("MAIL_FROM_ADDRESS=$email");
+//     //    putenv("MAIL_FROM_NAME=$request->email");
+//        // Read the contents of the .env file
+//        $envFile = base_path('.env');
+//        $envContents = File::get($envFile);
    
-       // Replace the corresponding lines
-       $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$email", $envContents);
-    //    $envContents = preg_replace('/^MAIL_FROM_NAME=.*$/m', "MAIL_FROM_NAME=$request->email", $envContents);
-       // Save the updated contents back to the .env file
-       File::put($envFile, $envContents);
+//        // Replace the corresponding lines
+//        $envContents = preg_replace('/^MAIL_FROM_ADDRESS=.*$/m', "MAIL_FROM_ADDRESS=$email", $envContents);
+//     //    $envContents = preg_replace('/^MAIL_FROM_NAME=.*$/m', "MAIL_FROM_NAME=$request->email", $envContents);
+//        // Save the updated contents back to the .env file
+//        File::put($envFile, $envContents);
 
-    Mail::to($email)->send(new Testmail([  
-        'full_name' => $request->full_name,
-        'subject' => $request->subject,
-        'email' =>  $request->email,
-        'message' =>$request->message,
-]));
+//     Mail::to($email)->send(new Testmail([  
+//         'full_name' => $request->full_name,
+//         'subject' => $request->subject,
+//         'email' =>  $request->email,
+//         'message' =>$request->message,
+// ]));
 
-    return '1';
-})->name('sensendmaildmail');
-
-
+//     return '1';
+// })->name('sensendmaildmail');
 
 
 
@@ -113,34 +111,36 @@ Route::get('sensendmaildmail', function (Request $request) {
 
 
 
-Route::post('mass',function (Request $request)
-{
-     try {
-        $account_sid = env('TWILIO_ACCOUNT_SID');
-        $auth_token = env('TWILIO_AUTH_TOKEN');
-        $client =new Client($account_sid, $auth_token);
-        $message =  $client->messages->create(
-            'whatsapp:+15074971407',
-         [     
-            'body'=>'Hello there!',
-            'from'=>'whatsapp:+15074971407',
+
+
+// Route::post('mass',function (Request $request)
+// {
+//      try {
+//         $account_sid = env('TWILIO_ACCOUNT_SID');
+//         $auth_token = env('TWILIO_AUTH_TOKEN');
+//         $client =new Client($account_sid, $auth_token);
+//         $message =  $client->messages->create(
+//             'whatsapp:+15074971407',
+//          [     
+//             'body'=>'Hello there!',
+//             'from'=>'whatsapp:+15074971407',
            
-         ]
+//          ]
            
-        ); 
+//         ); 
         
-        return $message;
+//         return $message;
 
 
-     } catch (\Throwable $e) {
+//      } catch (\Throwable $e) {
      
-        return $e->getMessage();
+//         return $e->getMessage();
 
 
-     }
+//      }
 
 
-})->name('mass');
+// })->name('mass');
 
 
 

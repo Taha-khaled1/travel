@@ -191,7 +191,7 @@
                     </div>
                   </div>
                   <div class="rlr-overview-detail__icon-group">
-                    <span class="rlr-overview-detail__label">النوغ</span>
+                    <span class="rlr-overview-detail__label">النوع</span>
                     <div class="rlr-overview-detail__icons">
                       <figure class="rlr-icon-text"><i class="rlr-icon-font flaticon-icecream-cone"> </i> <span class="">رفاهيه </span></figure>
                     </div>
