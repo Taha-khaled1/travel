@@ -48,7 +48,7 @@
                     </a>
                     <div>
                         <a href="{{ route('detalis.Trip',$item->id) }}" class="rlr-product-card__anchor-cat">
-                            <span class="rlr-product-card__sub-title"> {{ $item->event->name }}</span>
+                            {{-- <span class="rlr-product-card__sub-title"> {{ $item->event->name }}</span> --}}
                         </a>
                         <span class="rlr-product-card__sub-title">|</span>
                         <a href="{{ route('detalis.Trip',$item->id) }}" class="rlr-product-card__anchor-sub-cat">
