@@ -14,9 +14,9 @@ class TripTableSeeder extends Seeder
     public function run(): void
     {
         $trip = [
-               'price' => rand(1, 785),
+            'price' => rand(1, 785),
            
-            'name' => 'رحلة المهاجر',
+            'name' => 'فندق المهاجر',
             'image' => 'trip/1.png',
             'country' => 'الامارات', 
             
@@ -81,7 +81,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'فوق السحاب.',
+            'name' => 'شاليه السحاب.',
             'image' => 'trip/2.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -143,7 +143,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'جزر الشاطيء.',
+            'name' => 'شاليه الشاطيء.',
             'image' => 'trip/3.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -205,7 +205,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'حول العالم.',
+            'name' => 'فندق خمس نجوم.',
             'image' => 'trip/4.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -267,7 +267,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'مغامره الي الجبال',
+            'name' => 'فندق الجبال',
             'image' => 'trip/5.png',
             'country' => 'رحله استكشاف',
             'review' => rand(0, 5),
@@ -329,7 +329,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'جولة ممتعة.',
+            'name' => 'فله دورين.',
             'image' => 'trip/6.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -391,7 +391,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'الإجازة المثالية.',
+            'name' => 'شاليه مثالي.',
             'image' => 'trip/7.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -453,7 +453,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'أبراج السحاب.',
+            'name' => 'فله الريف.',
             'image' => 'trip/8.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -516,7 +516,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'راحتك للسياحة والسفر',
+            'name' => 'شاليه دهب',
             'image' => 'trip/9.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -640,7 +640,7 @@ class TripTableSeeder extends Seeder
         $trip = [
                'price' => rand(1, 785),
            
-            'name' => 'بلو بيرد ترافيل',
+            'name' => 'فندق  ترافيل',
             'image' => 'trip/10.png',
             'country' => 'الامارات',
             'review' => rand(0, 5),
@@ -701,7 +701,7 @@ class TripTableSeeder extends Seeder
         $trip = [
             'price' => rand(1, 785),
         
-         'name' => 'رحلة المهاجر',
+         'name' => 'فله المهاجر',
          'image' => 'trip/5.png',
          'country' => 'الامارات', 
          
@@ -757,7 +757,7 @@ class TripTableSeeder extends Seeder
      DB::table('features')->insert($trip_facilities);$trip = [
         'price' => rand(1, 785),
     
-     'name' => 'رحلة المهاجر',
+     'name' => 'شاليه المهاجر',
      'image' => 'trip/1.png',
      'country' => 'الامارات', 
      

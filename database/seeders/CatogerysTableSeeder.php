@@ -18,7 +18,7 @@ class CatogerysTableSeeder extends Seeder
     {
         
              Event::create([
-                'name' => 'فعليات',
+                'name' => 'منازل',
                 
                 'image' => 'catogery/1.png',
                 'created_at' => now(),
@@ -26,7 +26,7 @@ class CatogerysTableSeeder extends Seeder
             ]);
 
             Event::create([
-                'name' => 'رحلات',
+                'name' => 'فنادق',
                 
                 'image' => 'catogery/2.png',
                 'created_at' => now(),
@@ -35,7 +35,7 @@ class CatogerysTableSeeder extends Seeder
         
 
             Event::create([
-                'name' => 'مغامرات',
+                'name' => 'شاليهات',
                 
                 'image' => 'catogery/3.png',
                 'created_at' => now(),
@@ -43,7 +43,7 @@ class CatogerysTableSeeder extends Seeder
             ]);
 
             Event::create([
-                'name' => 'ايجار مركبات',
+                'name' => 'فلل',
                 
                 'image' => 'catogery/4.png',
                 'created_at' => now(),
